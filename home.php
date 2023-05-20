@@ -7,9 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="home.php">Home</a>
     <a href="logout.php">Keluar</a>
-    <h1>Response</h1>
-    <p>99 responses</p>
+    <h1>Halo beb</h1>
 </body>
 </html>
