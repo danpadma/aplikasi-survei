@@ -7,8 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="login.php">Masuk</a>
-    <a href="register.php">Daftar</a>
-    <a href="login.php">Create</a>
+    <a href="manage.php">Create</a>
 </body>
 </html>

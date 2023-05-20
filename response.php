@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="home.php">Home</a>
-    <a href="logout.php">Keluar</a>
     <h1>Response</h1>
-    <p>99 responses</p>
+    <h1>Nama Survei</h1>
+    <p>Deskripsi survei</p>
+    <p>Pertanyaan</p>
+    <p>Jawaban</p>
 </body>
 </html>
