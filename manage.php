@@ -1,3 +1,39 @@
+<?php 
+
+require "functions.php";
+
+if (isset($_POST["submit"])) {
+  // tambah survey
+  if (tambahSurvey($_POST) > 0) {
+    echo "<script>alert('data berhasil ditambahkan')</script>";
+  } else {
+    echo "<script>alert('data gagal ditambahkan')</script>";
+  }
+
+  // dapetin last id yg dimasukin di surveys
+  $surveyId = mysqli_insert_id($conn);
+
+  // tambah tiap pertanyaan
+  foreach ($_POST as $key => $value) {
+    if (str_contains($key, "question")) {
+      // tambah pertanyaan
+      mysqli_query($conn, "INSERT INTO questions (survey_id, question) VALUES ('$surveyId', '$value')");
+      // dapetin last id yg dimasukin di questions
+      $questionId = mysqli_insert_id($conn);
+    }
+    // tambah tiap jawaban
+    // kalo tipe jawabannya short
+    else if (str_contains($key, "answer")) {
+      mysqli_query($conn, "INSERT INTO answer_short (question_id, hint) VALUES ('$questionId', '$value')");
+    }
+    // kalo tipe jawabannya option
+    else if (str_contains($key, "option")) {
+      mysqli_query($conn, "INSERT INTO answer_options (question_id, option) VALUES ('$questionId', '$value')");
+    }
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +69,7 @@
               <input type="text" name="question1" placeholder="Question">
             </div>
             <div class="answer">
-              <input type="text" name="answer1" placeholder="Your answer" readonly>
+              <input type="text" name="answer1" placeholder="Your answer" value="short answer" readonly>
             </div>
             <div class="utility">
               <select class="select">

@@ -6,6 +6,11 @@ document.getElementById("current-tab").addEventListener("click", function(e) {
 // ambil questions
 const questions = document.getElementsByClassName("questions")[0]
 
+// hitung nomor pertanyaan dan jawaban
+let questionCount = 1
+let answerCount = 1
+let optionCount = 1
+
 questions.addEventListener("click", function(e) {
     // ambil question box
     const questionBox = e.target.parentElement.parentElement
@@ -15,6 +20,9 @@ questions.addEventListener("click", function(e) {
     const prevSibling = questionBox.previousElementSibling
     // fitur tambah pertanyaan
     if (e.target.className == "tambah-btn") {
+        // tambah jumlah pertanyaan dan jawaban
+        questionCount++;
+        answerCount++;
         // bikin question box baru
         const qboxAttr = document.createAttribute("class")
         qboxAttr.value = "question-box"
@@ -23,10 +31,10 @@ questions.addEventListener("click", function(e) {
         // set inner HTML nya
         pertanyaanBaru.innerHTML = `
             <div class="question">
-              <input type="text" name="question1" placeholder="Question">
+              <input type="text" name="question`+ questionCount +`" placeholder="Question">
             </div>
             <div class="answer">
-              <input type="text" name="answer1" placeholder="Your answer" readonly>
+              <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
             </div>
             <div class="utility">
               <select class="select">
@@ -74,7 +82,7 @@ questions.addEventListener("click", function(e) {
             // kalo milih jawaban singkat
             if (e.target.value == "Jawaban Singkat") {
                 answer.innerHTML = `
-                    <input type="text" name="answer1" placeholder="Your answer" readonly>
+                    <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
                 `;
             }
             // kalo milih pilihan ganda
@@ -83,7 +91,7 @@ questions.addEventListener("click", function(e) {
                     <div class="kontainer-pilihan">
                         <div>
                             <input type="radio" placeholder="Your answer" disabled>
-                            <input type="text" placeholder="option">
+                            <input type="text" name="option`+ optionCount +`" placeholder="option">
                         </div>
                     </div>
                     <a href="" class="add-option">add option</a>
@@ -93,10 +101,11 @@ questions.addEventListener("click", function(e) {
     }
     // fitur tambah opsi pada pilihan ganda
     if (e.target.className == "add-option") {
+        optionCount++
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
             <input type="radio" placeholder="Your answer" disabled>
-            <input type="text" placeholder="option">
+            <input type="text" name="option`+ optionCount +`" placeholder="option">
             <a href="" class="del-option">X</a>
         `;
         // tambah child kontainer pilihan, opsi
