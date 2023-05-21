@@ -1,3 +1,12 @@
+<?php 
+
+require "functions.php";
+
+$surveyId = $_GET["id"];
+
+var_dump($surveyId);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

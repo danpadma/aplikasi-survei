@@ -17,13 +17,14 @@ function tambahSurvey($data) {
     return mysqli_affected_rows($conn);
 }
 
-function tambahPertanyaan($q, $id) {
+function query($query) {
     global $conn;
-    $surveyId = $id;
-    $question = $q;
-    $query = "INSERT INTO questions (survey_id, question) VALUES ('$surveyId', '$question')";
-    mysqli_query($conn, $query);
-    return mysqli_affected_rows($conn);
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
 }
 
 ?>
