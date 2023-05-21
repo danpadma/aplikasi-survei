@@ -10,6 +10,20 @@ $questions = query("SELECT * FROM questions WHERE survey_id = $surveyId");
 
 $answersCount = 0;
 
+if (isset($_POST["submit"])) {
+    $username = $_POST["username"];
+    // tambah responses
+    mysqli_query($conn, "INSERT INTO responses (survey_id, username) VALUES ('$surveyId', '$username')");
+    $responseId = mysqli_insert_id($conn);
+
+    // tambahin tiap jawaban ke answers
+    foreach ($_POST as $key => $value) {
+        if (! str_contains($key, "username") && ! str_contains($key, "submit")) {
+            mysqli_query($conn, "INSERT INTO answers (response_id, answer) VALUES ('$responseId', '$value')");
+        }    
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
