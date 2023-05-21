@@ -5,31 +5,31 @@ require "functions.php";
 if (isset($_POST["submit"])) {
   // tambah survey
   if (tambahSurvey($_POST) > 0) {
-    echo "<script>alert('data berhasil ditambahkan')</script>";
-  } else {
-    echo "<script>alert('data gagal ditambahkan')</script>";
-  }
+    echo "<script>alert('data berhasil ditambahkan');document.location.href = 'home.php';</script>";
+    // dapetin last id yg dimasukin di surveys
+    $surveyId = mysqli_insert_id($conn);
 
-  // dapetin last id yg dimasukin di surveys
-  $surveyId = mysqli_insert_id($conn);
-
-  // tambah tiap pertanyaan
-  foreach ($_POST as $key => $value) {
-    if (str_contains($key, "question")) {
-      // tambah pertanyaan
-      mysqli_query($conn, "INSERT INTO questions (survey_id, question) VALUES ('$surveyId', '$value')");
-      // dapetin last id yg dimasukin di questions
-      $questionId = mysqli_insert_id($conn);
+    // tambah tiap pertanyaan
+    foreach ($_POST as $key => $value) {
+      if (str_contains($key, "question")) {
+        // tambah pertanyaan
+        mysqli_query($conn, "INSERT INTO questions (survey_id, question) VALUES ('$surveyId', '$value')");
+        // dapetin last id yg dimasukin di questions
+        $questionId = mysqli_insert_id($conn);
+      }
+      // tambah tiap jawaban
+      // kalo tipe jawabannya short
+      else if (str_contains($key, "answer")) {
+        mysqli_query($conn, "INSERT INTO answer_short (question_id, hint) VALUES ('$questionId', '$value')");
+      }
+      // kalo tipe jawabannya option
+      else if (str_contains($key, "option")) {
+        mysqli_query($conn, "INSERT INTO answer_options (question_id, option) VALUES ('$questionId', '$value')");
+      }
     }
-    // tambah tiap jawaban
-    // kalo tipe jawabannya short
-    else if (str_contains($key, "answer")) {
-      mysqli_query($conn, "INSERT INTO answer_short (question_id, hint) VALUES ('$questionId', '$value')");
-    }
-    // kalo tipe jawabannya option
-    else if (str_contains($key, "option")) {
-      mysqli_query($conn, "INSERT INTO answer_options (question_id, option) VALUES ('$questionId', '$value')");
-    }
+  } 
+  else {
+    echo "<script>alert('data gagal ditambahkan');document.location.href = 'home.php';</script>";
   }
 }
 
