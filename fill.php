@@ -9,6 +9,7 @@ $survey = query("SELECT * FROM surveys WHERE id = $surveyId")[0];
 $questions = query("SELECT * FROM questions WHERE survey_id = $surveyId");
 
 $answersCount = 0;
+$optionsCount = 0;
 
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
@@ -44,6 +45,7 @@ if (isset($_POST["submit"])) {
             <p><?= $row["question"]; ?></p>
             <?php 
                 $answersCount++;
+                $optionsCount++;
                 $questionId = $row["id"]; 
                 $shortAnswers = query("SELECT * FROM answer_short WHERE question_id = $questionId");
                 $optionAnswers = query("SELECT * FROM answer_options WHERE question_id = $questionId");
@@ -57,7 +59,7 @@ if (isset($_POST["submit"])) {
                 else if (count($optionAnswers) != 0) {
                     foreach ($optionAnswers as $x) {
             ?>
-                        <input type="radio" name="option" value="<?= $x["option"]; ?>"><?= $x["option"]; ?>
+                        <input type="radio" name="option<?= $optionsCount; ?>" value="<?= $x["option"]; ?>"><?= $x["option"]; ?>
                         <br>
             <?php
                     }

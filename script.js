@@ -9,7 +9,7 @@ const questions = document.getElementsByClassName("questions")[0]
 // hitung nomor pertanyaan dan jawaban
 let questionCount = 1
 let answerCount = 1
-let optionCount = 1
+let optionCount = 0
 
 questions.addEventListener("click", function(e) {
     // ambil question box
@@ -87,6 +87,7 @@ questions.addEventListener("click", function(e) {
             }
             // kalo milih pilihan ganda
             else if (e.target.value == "Pilihan Ganda") {
+                optionCount++
                 answer.innerHTML = `
                     <div class="kontainer-pilihan">
                         <div>
