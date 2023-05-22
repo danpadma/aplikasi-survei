@@ -2,6 +2,8 @@
 
 require "functions.php";
 
+$imageNo = 1;
+
 if (isset($_POST["submit"])) {
   // tambah survey
   if (tambahSurvey($_POST) > 0) {
@@ -12,10 +14,13 @@ if (isset($_POST["submit"])) {
     // tambah tiap pertanyaan
     foreach ($_POST as $key => $value) {
       if (str_contains($key, "question")) {
-        // tambah pertanyaan
-        mysqli_query($conn, "INSERT INTO questions (survey_id, question) VALUES ('$surveyId', '$value')");
+        // tambah pertanyaan + gambar
+        $image = upload("gambar$imageNo");
+        mysqli_query($conn, "INSERT INTO questions (survey_id, question, image) VALUES ('$surveyId', '$value', '$image')");
         // dapetin last id yg dimasukin di questions
         $questionId = mysqli_insert_id($conn);
+
+        $imageNo++;
       }
       // tambah tiap jawaban
       // kalo tipe jawabannya short
@@ -60,7 +65,7 @@ if (isset($_POST["submit"])) {
     <a class="btnTab" href="result.php">Result</a>
 
     <!-- form survei -->
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
       <div class="kontainer-survei">
         <!-- bagian title dan desc -->
         <input type="text" name="title" id="heading" placeholder="Title" required> <br>

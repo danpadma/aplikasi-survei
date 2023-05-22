@@ -32,6 +32,15 @@ $jawabanNo = 0;
     <?php foreach ($questions as $row): ?>
         <p><?= $row["question"]; ?></p>
         <?php 
+            if ($row["image"] != "") {
+        ?>
+                <div>
+                    <img src="img/<?= $row["image"]; ?>" alt="" width="300">
+                </div>
+        <?php
+            }
+        ?>
+        <?php 
             $questionId = $row["id"]; 
             $shortAnswers = query("SELECT * FROM answer_short WHERE question_id = $questionId");
             $optionAnswers = query("SELECT * FROM answer_options WHERE question_id = $questionId");

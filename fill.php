@@ -44,6 +44,15 @@ if (isset($_POST["submit"])) {
         <?php foreach ($questions as $row): ?>
             <p><?= $row["question"]; ?></p>
             <?php 
+                if ($row["image"] != "") {
+            ?>
+                    <div>
+                        <img src="img/<?= $row["image"]; ?>" alt="" width="300">
+                    </div>
+            <?php
+                }
+            ?>
+            <?php 
                 $answersCount++;
                 $optionsCount++;
                 $questionId = $row["id"]; 

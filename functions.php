@@ -27,4 +27,31 @@ function query($query) {
     return $rows;
 }
 
+function upload($name) {
+    $namaFile = $_FILES[$name]["name"];
+    $ukuranFile = $_FILES[$name]["size"];
+    $tmpName = $_FILES[$name]["tmp_name"];
+
+    $ekstensiGambarValid = ["jpg", "jpeg", "png"];
+    $ekstensiGambar = explode(".", $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>alert('Yang anda upload bukan gambar.');</script>";
+        return false;
+    }
+
+    if ($ukuranFile > 1000000) {
+        echo "<script>alert('Ukuran file terlalu besar.');</script>";
+        return false;
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+
+    return $namaFileBaru;
+}
+
 ?>
