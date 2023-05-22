@@ -8,6 +8,7 @@ const questions = document.getElementsByClassName("questions")[0]
 
 // hitung nomor pertanyaan dan jawaban
 let questionCount = 1
+let gambarCount = 1
 let answerCount = 1
 let optionCount = 0
 
@@ -21,8 +22,9 @@ questions.addEventListener("click", function(e) {
     // fitur tambah pertanyaan
     if (e.target.className == "tambah-btn") {
         // tambah jumlah pertanyaan dan jawaban
-        questionCount++;
-        answerCount++;
+        questionCount++
+        gambarCount++
+        answerCount++
         // bikin question box baru
         const qboxAttr = document.createAttribute("class")
         qboxAttr.value = "question-box"
@@ -32,6 +34,9 @@ questions.addEventListener("click", function(e) {
         pertanyaanBaru.innerHTML = `
             <div class="question">
               <input type="text" name="question`+ questionCount +`" placeholder="Question">
+              <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
+              <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
+              <div></div>
             </div>
             <div class="answer">
               <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
@@ -117,6 +122,35 @@ questions.addEventListener("click", function(e) {
     // fitur hapus opsi pada pilihan ganda
     if (e.target.className == "del-option") {
         e.target.parentElement.remove()
+        e.preventDefault()
+    }
+    // fitur tambah img
+    if (e.target.className == "fa-regular fa-image") {
+        // tambah event listener ke input file
+        e.target.parentElement.previousElementSibling.addEventListener("change", function(event) {
+            // ambil div buat preview img
+            let imageDiv = e.target.parentElement.nextElementSibling
+            imageDiv.innerHTML = ""
+
+            // bikin img
+            let newImg = document.createElement("img")
+            let image = URL.createObjectURL(event.target.files[0])
+            newImg.src = image
+            newImg.width = 300
+
+            // bikin tombol close
+            const a = document.createElement("a")
+            a.href = ""
+            a.classList.add("del-img")
+            a.innerHTML = "X"
+
+            imageDiv.appendChild(newImg)
+            imageDiv.appendChild(a)
+        })
+    }
+    // fitur hapus img
+    if (e.target.className == "del-img") {
+        e.target.parentElement.innerHTML = ""
         e.preventDefault()
     }
 })

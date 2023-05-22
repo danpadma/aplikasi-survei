@@ -44,7 +44,11 @@ if (isset($_POST["submit"])) {
         h1 {
             text-align: center;
         }
+        label:hover {
+          cursor: pointer;
+        }
     </style>
+    <script src="https://kit.fontawesome.com/3dc4dca5ea.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -67,6 +71,9 @@ if (isset($_POST["submit"])) {
           <div class="question-box">
             <div class="question">
               <input type="text" name="question1" placeholder="Question">
+              <input type="file" name="gambar1" id="gambar1" hidden>
+              <label for="gambar1"><i class="fa-regular fa-image"></i></label>
+              <div></div>
             </div>
             <div class="answer">
               <input type="text" name="answer1" placeholder="Your answer" value="short answer" readonly>
