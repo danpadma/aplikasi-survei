@@ -1,0 +1,160 @@
+.header {
+    background-color: #f2f2f2;
+    padding-top: 50px;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #cce3ec;
+}
+
+.btnTab {
+    display: inline-block;
+    width: 100px;
+    background-color: #eff7fa;
+    color: #333;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    padding: 5px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#current-tab {
+    font-weight: normal;
+    color: rgb(51, 108, 110);
+    border-bottom: 3px solid rgb(51, 108, 110);
+}
+
+.kontainer-title {
+    width: 760px;   
+    margin: auto;
+    background-color: #ffffff;
+    padding-block: 20px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#title {
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 35px;
+    color: #333;
+    width: 740px;
+    margin-bottom: 5px;
+}
+
+#desc {
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    color: #333;
+    width: 740px;
+    margin-bottom: 5px;
+}
+
+.kontainer-survei {
+    width: 780px;   
+    margin: auto;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#question {
+    border: 0px;
+    border-radius: 10px;
+    padding: 15px 15px;
+    margin: 10px;
+    font-size: 23px;
+    background-color: #f3f3f3;
+    color: #333;
+    width: 700px;
+    margin-bottom: 5px;
+}
+
+#answer {
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px 8px;
+    margin-left: 15px;
+    font-size: 15px;
+    color: #666666;
+    width: 700px;
+    margin-bottom: 25px;
+}
+
+.utility {
+    text-align: right;
+}
+
+.select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    width: 175px;
+}
+
+.updown-btn {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    width: 45px;
+}
+
+.hapus-btn {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    width: 45px;
+}
+
+.tambah-btn {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    width: 45px;
+}
+
+.kontainer-send {
+    width: 780px;   
+    margin: auto;
+    padding: 5px;
+    text-align: right;
+}
+
+#submitsurvei-btn {
+    padding: 15px 50px;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(84, 129, 212);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+label:hover {
+  cursor: pointer;
+}

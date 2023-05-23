@@ -44,59 +44,63 @@ if (isset($_POST["submit"])) {
 
 <head>
     <title>Manage</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
-        h1 {
-            text-align: center;
-        }
-        label:hover {
-          cursor: pointer;
-        }
+
     </style>
     <script src="https://kit.fontawesome.com/3dc4dca5ea.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Manage</h1>
-
     <!-- change tab -->
-    <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
-    <a class="btnTab" href="form.php">Fill</a>
-    <a class="btnTab" href="result.php">Result</a>
+    <div class="header">
+      <div class="navigation">
+        <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
+        <a class="btnTab" href="fill.php">Fill</a>
+        <a class="btnTab" href="response.php">Result</a>
+      </div>
+    </div>
+    
 
     <!-- form survei -->
     <form action="" method="post" enctype="multipart/form-data">
-      <div class="kontainer-survei">
-        <!-- bagian title dan desc -->
-        <input type="text" name="title" id="heading" placeholder="Title" required> <br>
-        <input type="text" name="desc" id="desc" placeholder="Description (optional)">
-        <hr>
+
+    <!-- bagian title dan desc -->
+    <div class="kontainer-title">
+      <input type="text" name="title" id="title" placeholder="Judul survei" required> <br>
+      <input type="text" name="desc" id="desc" placeholder="Deskripsi (opsional)">
+    </div>
+
+    <div class="kontainer-survei">
         <!-- pertanyaan2 -->
         <div class="questions">
           <div class="question-box">
             <div class="question">
-              <input type="text" name="question1" placeholder="Question">
+              <input type="text" name="question1" id="question" placeholder="Pertanyaan ...">
               <input type="file" name="gambar1" id="gambar1" hidden>
               <label for="gambar1"><i class="fa-regular fa-image"></i></label>
               <div></div>
             </div>
             <div class="answer">
-              <input type="text" name="answer1" placeholder="Your answer" value="short answer" readonly>
+              <input type="text" name="answer1" id="answer" placeholder="Your answer" value="Jawaban singkat" readonly>
             </div>
             <div class="utility">
               <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
               </select>
-              <button type="button" class="up-btn">^</button>
-              <button type="button" class="down-btn">v</button>
-              <button type="button" class="hapus-btn">hapus</button>
-              <button type="button" class="tambah-btn">tambah</button>
+              <button type="button" class="updown-btn">^</button>
+              <button type="button" class="updown-btn">v</button>
+              <button type="button" class="hapus-btn">x</button>
+              <button type="button" class="tambah-btn">+</button>
             </div>
           </div>
         </div>
       </div>
-      <input type="submit" name="submit" value="kirim">
+      <div class="kontainer-send">
+        <input type="submit" name="submit" id="submitsurvei-btn" value="Kirim">
+      </div>
     </form>
     <script src="script.js"></script>
 </body>
