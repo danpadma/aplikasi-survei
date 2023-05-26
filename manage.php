@@ -88,8 +88,8 @@ if (isset($_POST["submit"])) {
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
               </select>
-              <button type="button" class="updown-btn up">^</button>
-              <button type="button" class="updown-btn down">v</button>
+              <button type="button" class="up-btn">^</button>
+              <button type="button" class="down-btn">v</button>
               <button type="button" class="hapus-btn">x</button>
               <button type="button" class="tambah-btn">+</button>
             </div>
@@ -97,7 +97,7 @@ if (isset($_POST["submit"])) {
         </div>
       </div>
       <div class="kontainer-send">
-        <input type="submit" name="submit" id="submitsurvei-btn" value="Kirim">
+        <input type="submit" name="submit" class="btn-basic" value="Kirim">
       </div>
     </form>
     <script src="script.js"></script>

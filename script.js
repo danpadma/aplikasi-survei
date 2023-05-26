@@ -46,8 +46,8 @@ questions.addEventListener("click", function(e) {
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
               </select>
-              <button type="button" class="updown-btn up">^</button>
-              <button type="button" class="updown-btn down">v</button>
+              <button type="button" class="up-btn">^</button>
+              <button type="button" class="down-btn">v</button>
               <button type="button" class="hapus-btn">x</button>
               <button type="button" class="tambah-btn">+</button>
             </div>
@@ -69,12 +69,12 @@ questions.addEventListener("click", function(e) {
         questionBox.remove()
     }
     // fitur geser atas
-    if (e.target.className == "updown-btn up" && prevSibling != null) {
+    if (e.target.className == "up-btn" && prevSibling != null) {
         // pindah question box ke sebelum prevSibling. Ini dapat dilakukan jika bukan pertanyaan pertama
         questions.insertBefore(questionBox, prevSibling)
     }
     // fitur geser bawah
-    if (e.target.className == "updown-btn down" && nextSibling != null) {
+    if (e.target.className == "down-btn" && nextSibling != null) {
         // pindah next sibling question box ke sebelum question box. Lakukan ini hanya jika bukan pertanyaan terakhir
         questions.insertBefore(nextSibling, questionBox)
     }
@@ -96,8 +96,8 @@ questions.addEventListener("click", function(e) {
                 answer.innerHTML = `
                     <div class="kontainer-pilihan">
                         <div>
-                            <input type="radio" placeholder="Your answer" disabled>
-                            <input type="text" name="option`+ optionCount +`" placeholder="option">
+                            <input type="radio" class="answerChoiceButton" placeholder="Your answer" disabled>
+                            <input type="text" name="option`+ optionCount +`" class="answerChoice" placeholder="option">
                         </div>
                     </div>
                     <a href="" class="add-option">add option</a>
@@ -110,8 +110,8 @@ questions.addEventListener("click", function(e) {
         optionCount++
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
-            <input type="radio" placeholder="Your answer" disabled>
-            <input type="text" name="option`+ optionCount +`" placeholder="option">
+            <input type="radio" class="answerChoiceButton" placeholder="Your answer" disabled>
+            <input type="text" name="option`+ optionCount +`" class="answerChoice" placeholder="option">
             <a href="" class="del-option">X</a>
         `;
         // tambah child kontainer pilihan, opsi
