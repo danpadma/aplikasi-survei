@@ -36,15 +36,15 @@ function upload($name) {
     $ekstensiGambar = explode(".", $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
 
-    // if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-    //     echo "<script>alert('Yang anda upload bukan gambar.');</script>";
-    //     return false;
-    // }
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>alert('Yang anda upload bukan gambar.');</script>";
+        return false;
+    }
 
-    // if ($ukuranFile > 1000000) {
-    //     echo "<script>alert('Ukuran file terlalu besar.');</script>";
-    //     return false;
-    // }
+    if ($ukuranFile > 1000000) {
+        echo "<script>alert('Ukuran file terlalu besar.');</script>";
+        return false;
+    }
 
     $namaFileBaru = uniqid();
     $namaFileBaru .= ".";
