@@ -45,10 +45,6 @@ if (isset($_POST["submit"])) {
 <head>
     <title>Manage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <style>
-
-    </style>
     <script src="https://kit.fontawesome.com/3dc4dca5ea.js" crossorigin="anonymous"></script>
 </head>
 
@@ -110,7 +106,7 @@ if (isset($_POST["submit"])) {
         </div>
       </div>
       <div class="kontainer-send">
-        <input type="submit" name="submit" id="submitsurvei-btn" value="Kirim">
+        <input type="submit" name="submit" class="btn-basic" value="Kirim">
       </div>
     </form>
     <script src="script.js"></script>

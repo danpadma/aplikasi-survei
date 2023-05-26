@@ -14,6 +14,40 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+#body-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.kontainer-landing {
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    padding-block: 20px;
+    padding-inline: 20px;
+    margin: auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-basic {
+    padding: 10px 50px;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 10px;
+    background-color:rgb(84, 129, 212);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .btnTab {
     display: inline-block;
     width: 100px;
@@ -155,17 +189,6 @@ body {
     margin: auto;
     padding: 5px;
     text-align: right;
-}
-
-#submitsurvei-btn {
-    padding: 15px 50px;
-    font-size: 20px;
-    border: 0px;
-    border-radius: 10px;
-    background-color:rgb(84, 129, 212);
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
 }
 
 label:hover {
