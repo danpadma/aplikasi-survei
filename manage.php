@@ -76,25 +76,36 @@ if (isset($_POST["submit"])) {
         <!-- pertanyaan2 -->
         <div class="questions">
           <div class="question-box">
+
             <div class="question">
               <input type="text" name="question1" id="question" placeholder="Pertanyaan ...">
               <input type="file" name="gambar1" id="gambar1" hidden>
               <label for="gambar1"><i class="fa-regular fa-image"></i></label>
-              <div></div>
             </div>
-            <div class="answer">
-              <input type="text" name="answer1" id="answer" placeholder="Your answer" value="Jawaban singkat" readonly>
+
+            <div class="answerShort">
+              <input type="text" name="answer1" id="answerShort" value="Jawaban singkat" readonly>
             </div>
+
+            <div class="answerChoice">
+              <div>
+                <input type="radio" id="answerChoiceButton" disabled>
+                <input type="text" id="answerChoice" placeholder="option">
+              </div>
+              <a class="add-option" id="addOption">Tambah pilihan</a>
+            </div>
+
             <div class="utility">
               <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
               </select>
-              <button type="button" class="updown-btn">^</button>
-              <button type="button" class="updown-btn">v</button>
+              <button type="button" class="up-btn">^</button>
+              <button type="button" class="down-btn">v</button>
               <button type="button" class="hapus-btn">x</button>
               <button type="button" class="tambah-btn">+</button>
             </div>
+
           </div>
         </div>
       </div>
