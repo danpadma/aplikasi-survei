@@ -2,12 +2,11 @@
 
 require "functions.php";
 
-$imageNo = 1;
-
 if (isset($_POST["submit"])) {
   // tambah survey
   if (tambahSurvey($_POST) > 0) {
     echo "<script>alert('data berhasil ditambahkan');document.location.href = 'home.php';</script>";
+    // var_dump($_FILES);
     // dapetin last id yg dimasukin di surveys
     $surveyId = mysqli_insert_id($conn);
 
@@ -15,12 +14,11 @@ if (isset($_POST["submit"])) {
     foreach ($_POST as $key => $value) {
       if (str_contains($key, "question")) {
         // tambah pertanyaan + gambar
-        $image = upload("gambar$imageNo");
+        $no = getNumber($key);
+        $image = upload("gambar$no"); // !!! pertanyaan ke berapa == gambar ke berapa
         mysqli_query($conn, "INSERT INTO questions (survey_id, question, image) VALUES ('$surveyId', '$value', '$image')");
         // dapetin last id yg dimasukin di questions
         $questionId = mysqli_insert_id($conn);
-
-        $imageNo++;
       }
       // tambah tiap jawaban
       // kalo tipe jawabannya short
@@ -76,22 +74,22 @@ if (isset($_POST["submit"])) {
         <!-- pertanyaan2 -->
         <div class="questions">
           <div class="question-box">
-            <div class="question">
-              <input type="text" name="question1" id="question" placeholder="Pertanyaan ...">
+            <div class="question-div">
+              <input type="text" name="question1" class="question" placeholder="Pertanyaan ...">
               <input type="file" name="gambar1" id="gambar1" hidden>
               <label for="gambar1"><i class="fa-regular fa-image"></i></label>
               <div></div>
             </div>
-            <div class="answer">
-              <input type="text" name="answer1" id="answer" placeholder="Your answer" value="Jawaban singkat" readonly>
+            <div class="answer-div">
+              <input type="text" name="answer1" class="answer" value="Jawaban singkat" readonly>
             </div>
             <div class="utility">
               <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
               </select>
-              <button type="button" class="updown-btn">^</button>
-              <button type="button" class="updown-btn">v</button>
+              <button type="button" class="updown-btn up">^</button>
+              <button type="button" class="updown-btn down">v</button>
               <button type="button" class="hapus-btn">x</button>
               <button type="button" class="tambah-btn">+</button>
             </div>

@@ -32,24 +32,24 @@ questions.addEventListener("click", function(e) {
         pertanyaanBaru.setAttributeNode(qboxAttr)
         // set inner HTML nya
         pertanyaanBaru.innerHTML = `
-            <div class="question">
-              <input type="text" name="question`+ questionCount +`" placeholder="Question">
+            <div class="question-div">
+              <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ...">
               <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
               <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
               <div></div>
             </div>
-            <div class="answer">
-              <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
+            <div class="answer-div">
+              <input type="text" name="answer`+ answerCount +`" class="answer" value="Jawaban singkat" readonly>
             </div>
             <div class="utility">
               <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
               </select>
-              <button type="button" class="up-btn">^</button>
-              <button type="button" class="down-btn">v</button>
-              <button type="button" class="hapus-btn">hapus</button>
-              <button type="button" class="tambah-btn">tambah</button>
+              <button type="button" class="updown-btn up">^</button>
+              <button type="button" class="updown-btn down">v</button>
+              <button type="button" class="hapus-btn">x</button>
+              <button type="button" class="tambah-btn">+</button>
             </div>
         `;
         // kalo yg dipencet itu pertanyaan terakhir
@@ -69,12 +69,12 @@ questions.addEventListener("click", function(e) {
         questionBox.remove()
     }
     // fitur geser atas
-    if (e.target.className == "up-btn" && prevSibling != null) {
+    if (e.target.className == "updown-btn up" && prevSibling != null) {
         // pindah question box ke sebelum prevSibling. Ini dapat dilakukan jika bukan pertanyaan pertama
         questions.insertBefore(questionBox, prevSibling)
     }
     // fitur geser bawah
-    if (e.target.className == "down-btn" && nextSibling != null) {
+    if (e.target.className == "updown-btn down" && nextSibling != null) {
         // pindah next sibling question box ke sebelum question box. Lakukan ini hanya jika bukan pertanyaan terakhir
         questions.insertBefore(nextSibling, questionBox)
     }
@@ -87,7 +87,7 @@ questions.addEventListener("click", function(e) {
             // kalo milih jawaban singkat
             if (e.target.value == "Jawaban Singkat") {
                 answer.innerHTML = `
-                    <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
+                    <input type="text" name="answer`+ answerCount +`" class="answer" value="Jawaban singkat" readonly>
                 `;
             }
             // kalo milih pilihan ganda
