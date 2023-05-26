@@ -1,7 +1,7 @@
 // cegah link current tab untuk mereload
-document.getElementById("current-tab").addEventListener("click", function(e) {
-    e.preventDefault()
-})
+// document.getElementById("current-tab").addEventListener("click", function(e) {
+//     e.preventDefault()
+// })
 
 // ambil questions
 const questions = document.getElementsByClassName("questions")[0]

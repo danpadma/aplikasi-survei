@@ -54,9 +54,10 @@ if (isset($_POST["submit"])) {
     <!-- change tab -->
     <div class="header">
       <div class="navigation">
-        <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
+        <!-- <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
         <a class="btnTab" href="fill.php">Fill</a>
-        <a class="btnTab" href="response.php">Result</a>
+        <a class="btnTab" href="response.php">Result</a> -->
+        <a href="home.php">Username</a>
       </div>
     </div>
     
@@ -66,7 +67,7 @@ if (isset($_POST["submit"])) {
 
     <!-- bagian title dan desc -->
     <div class="kontainer-title">
-      <input type="text" name="title" id="title" placeholder="Judul survei" required> <br>
+      <input type="text" name="title" id="title" placeholder="Judul Survei" required> <br>
       <input type="text" name="desc" id="desc" placeholder="Deskripsi (opsional)">
     </div>
 
