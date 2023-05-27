@@ -22,7 +22,7 @@ $responses = query("SELECT * FROM responses WHERE survey_id = $surveyId");
     <h1><?= $survey["title"]; ?></h1>
     <h2><?= count($responses); ?> Responden</h2>
     <?php foreach ($responses as $row): ?>
-        <a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>"><?= $row["username"]; ?></a>
+        <a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>"><?= $row["username"]; ?></a> <br>
     <?php endforeach; ?>
     <a href="home.php">Kembali</a>
 </body>

@@ -35,6 +35,7 @@ function upload($name) {
     $ekstensiGambarValid = ["jpg", "jpeg", "png"];
     $ekstensiGambar = explode(".", $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
+
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>alert('Yang anda upload bukan gambar.');</script>";
         return false;
@@ -52,6 +53,17 @@ function upload($name) {
     move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
 
     return $namaFileBaru;
+}
+
+function getNumber($string) {
+    $nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    $num = "";
+    for ($i = 0; $i < strlen($string); $i++) {
+        if (in_array($string[$i], $nums)) {
+            $num .= $string[$i];
+        }
+    }
+    return $num;
 }
 
 ?>

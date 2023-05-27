@@ -2,12 +2,11 @@
 
 require "functions.php";
 
-$imageNo = 1;
-
 if (isset($_POST["submit"])) {
   // tambah survey
   if (tambahSurvey($_POST) > 0) {
     echo "<script>alert('data berhasil ditambahkan');document.location.href = 'home.php';</script>";
+    // var_dump($_FILES);
     // dapetin last id yg dimasukin di surveys
     $surveyId = mysqli_insert_id($conn);
 
@@ -15,12 +14,11 @@ if (isset($_POST["submit"])) {
     foreach ($_POST as $key => $value) {
       if (str_contains($key, "question")) {
         // tambah pertanyaan + gambar
-        $image = upload("gambar$imageNo");
+        $no = getNumber($key);
+        $image = upload("gambar$no"); // !!! pertanyaan ke berapa == gambar ke berapa
         mysqli_query($conn, "INSERT INTO questions (survey_id, question, image) VALUES ('$surveyId', '$value', '$image')");
         // dapetin last id yg dimasukin di questions
         $questionId = mysqli_insert_id($conn);
-
-        $imageNo++;
       }
       // tambah tiap jawaban
       // kalo tipe jawabannya short
@@ -45,6 +43,10 @@ if (isset($_POST["submit"])) {
 <head>
     <title>Manage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+
+    </style>
     <script src="https://kit.fontawesome.com/3dc4dca5ea.js" crossorigin="anonymous"></script>
 </head>
 
@@ -52,9 +54,16 @@ if (isset($_POST["submit"])) {
     <!-- change tab -->
     <div class="header">
       <div class="navigation">
+<<<<<<< HEAD
         <a class="btn-tab" id="current-tab" href="manage.php">Manage</a>
         <a class="btn-tab" id="another-tab" href="fill.php">Fill</a>
         <a class="btn-tab" id="another-tab" href="response.php">Result</a>
+=======
+        <!-- <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
+        <a class="btnTab" href="fill.php">Fill</a>
+        <a class="btnTab" href="response.php">Result</a> -->
+        <a href="home.php">Username</a>
+>>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
       </div>
     </div>
     
@@ -64,7 +73,7 @@ if (isset($_POST["submit"])) {
 
     <!-- bagian title dan desc -->
     <div class="kontainer-title">
-      <input type="text" name="title" id="title" placeholder="Judul survei" required> <br>
+      <input type="text" name="title" id="title" placeholder="Judul Survei" required> <br>
       <input type="text" name="desc" id="desc" placeholder="Deskripsi (opsional)">
     </div>
 
@@ -72,12 +81,13 @@ if (isset($_POST["submit"])) {
         <!-- pertanyaan2 -->
         <div class="questions">
           <div class="question-box">
-
-            <div class="question">
-              <input type="text" name="question1" id="question" placeholder="Pertanyaan ...">
+            <div class="question-div">
+              <input type="text" name="question1" class="question" placeholder="Pertanyaan ...">
               <input type="file" name="gambar1" id="gambar1" hidden>
               <label for="gambar1"><i class="fa-regular fa-image"></i></label>
+              <div></div>
             </div>
+<<<<<<< HEAD
 
             <div>
               <input type="text" name="answer1" class="answer-text" id="answer-short" value="Jawaban singkat" readonly>
@@ -91,6 +101,11 @@ if (isset($_POST["submit"])) {
               <a class="add-option" id="addOption">Tambah pilihan</a>
             </div>
 
+=======
+            <div class="answer-div">
+              <input type="text" name="answer1" class="answer" value="Jawaban singkat" readonly>
+            </div>
+>>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
             <div class="utility">
               <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
@@ -101,7 +116,6 @@ if (isset($_POST["submit"])) {
               <button type="button" class="hapus-btn">x</button>
               <button type="button" class="tambah-btn">+</button>
             </div>
-
           </div>
         </div>
       </div>

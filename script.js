@@ -1,7 +1,7 @@
 // cegah link current tab untuk mereload
-document.getElementById("current-tab").addEventListener("click", function(e) {
-    e.preventDefault()
-})
+// document.getElementById("current-tab").addEventListener("click", function(e) {
+//     e.preventDefault()
+// })
 
 // ambil questions
 const questions = document.getElementsByClassName("questions")[0]
@@ -32,14 +32,14 @@ questions.addEventListener("click", function(e) {
         pertanyaanBaru.setAttributeNode(qboxAttr)
         // set inner HTML nya
         pertanyaanBaru.innerHTML = `
-            <div class="question">
-              <input type="text" name="question`+ questionCount +`" placeholder="Question">
+            <div class="question-div">
+              <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ...">
               <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
               <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
               <div></div>
             </div>
-            <div class="answer">
-              <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
+            <div class="answer-div">
+              <input type="text" name="answer`+ answerCount +`" class="answer" value="Jawaban singkat" readonly>
             </div>
             <div class="utility">
               <select class="select">
@@ -48,8 +48,8 @@ questions.addEventListener("click", function(e) {
               </select>
               <button type="button" class="up-btn">^</button>
               <button type="button" class="down-btn">v</button>
-              <button type="button" class="hapus-btn">hapus</button>
-              <button type="button" class="tambah-btn">tambah</button>
+              <button type="button" class="hapus-btn">x</button>
+              <button type="button" class="tambah-btn">+</button>
             </div>
         `;
         // kalo yg dipencet itu pertanyaan terakhir
@@ -87,7 +87,7 @@ questions.addEventListener("click", function(e) {
             // kalo milih jawaban singkat
             if (e.target.value == "Jawaban Singkat") {
                 answer.innerHTML = `
-                    <input type="text" name="answer`+ answerCount +`" placeholder="Your answer" value="short answer" readonly>
+                    <input type="text" name="answer`+ answerCount +`" class="answer" value="Jawaban singkat" readonly>
                 `;
             }
             // kalo milih pilihan ganda
@@ -96,8 +96,8 @@ questions.addEventListener("click", function(e) {
                 answer.innerHTML = `
                     <div class="kontainer-pilihan">
                         <div>
-                            <input type="radio" placeholder="Your answer" disabled>
-                            <input type="text" name="option`+ optionCount +`" placeholder="option">
+                            <input type="radio" class="answerChoiceButton" placeholder="Your answer" disabled>
+                            <input type="text" name="option`+ optionCount +`" class="answerChoice" placeholder="option">
                         </div>
                     </div>
                     <a href="" class="add-option">add option</a>
@@ -110,8 +110,8 @@ questions.addEventListener("click", function(e) {
         optionCount++
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
-            <input type="radio" placeholder="Your answer" disabled>
-            <input type="text" name="option`+ optionCount +`" placeholder="option">
+            <input type="radio" class="answerChoiceButton" placeholder="Your answer" disabled>
+            <input type="text" name="option`+ optionCount +`" class="answerChoice" placeholder="option">
             <a href="" class="del-option">X</a>
         `;
         // tambah child kontainer pilihan, opsi
