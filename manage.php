@@ -52,9 +52,9 @@ if (isset($_POST["submit"])) {
     <!-- change tab -->
     <div class="header">
       <div class="navigation">
-        <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
-        <a class="btnTab" href="fill.php">Fill</a>
-        <a class="btnTab" href="response.php">Result</a>
+        <a class="btn-tab" id="current-tab" href="manage.php">Manage</a>
+        <a class="btn-tab" id="another-tab" href="fill.php">Fill</a>
+        <a class="btn-tab" id="another-tab" href="response.php">Result</a>
       </div>
     </div>
     
@@ -79,14 +79,14 @@ if (isset($_POST["submit"])) {
               <label for="gambar1"><i class="fa-regular fa-image"></i></label>
             </div>
 
-            <div class="answerShort">
-              <input type="text" name="answer1" id="answerShort" value="Jawaban singkat" readonly>
+            <div>
+              <input type="text" name="answer1" class="answer-text" id="answer-short" value="Jawaban singkat" readonly>
             </div>
 
-            <div class="answerChoice">
+            <div class="answer-choice">
               <div>
-                <input type="radio" id="answerChoiceButton" disabled>
-                <input type="text" id="answerChoice" placeholder="option">
+                <input type="radio" id="answer-choice-cutton" disabled>
+                <input type="text" id="answer-choice" placeholder="option">
               </div>
               <a class="add-option" id="addOption">Tambah pilihan</a>
             </div>
