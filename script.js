@@ -39,7 +39,7 @@ questions.addEventListener("click", function(e) {
               <div></div>
             </div>
             <div class="answer-div">
-              <input type="text" name="answer`+ answerCount +`" class="answer" value="Jawaban singkat" readonly>
+              <input type="text" name="answer`+ answerCount +`" class="answer-text" value="Jawaban singkat" readonly>
             </div>
             <div class="utility">
               <select class="select">
@@ -87,20 +87,20 @@ questions.addEventListener("click", function(e) {
             // kalo milih jawaban singkat
             if (e.target.value == "Jawaban Singkat") {
                 answer.innerHTML = `
-                    <input type="text" name="answer`+ answerCount +`" class="answer" value="Jawaban singkat" readonly>
+                    <input type="text" name="answer`+ answerCount +`" class="answer-text" value="Jawaban singkat" readonly>
                 `;
             }
             // kalo milih pilihan ganda
             else if (e.target.value == "Pilihan Ganda") {
                 optionCount++
                 answer.innerHTML = `
-                    <div class="kontainer-pilihan">
+                    <div class="answer-choice">
                         <div>
-                            <input type="radio" class="answerChoiceButton" placeholder="Your answer" disabled>
-                            <input type="text" name="option`+ optionCount +`" class="answerChoice" placeholder="option">
+                            <input type="radio" class="answer-choice-button" disabled>
+                            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="option">
                         </div>
                     </div>
-                    <a href="" class="add-option">add option</a>
+                    <a href="" class="add-option">Tambah pilihan</a>
                 `;
             }
         })
@@ -110,8 +110,8 @@ questions.addEventListener("click", function(e) {
         optionCount++
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
-            <input type="radio" class="answerChoiceButton" placeholder="Your answer" disabled>
-            <input type="text" name="option`+ optionCount +`" class="answerChoice" placeholder="option">
+            <input type="radio" class="answer-choice-button" disabled>
+            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="option">
             <a href="" class="del-option">X</a>
         `;
         // tambah child kontainer pilihan, opsi

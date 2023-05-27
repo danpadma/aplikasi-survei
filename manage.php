@@ -81,16 +81,8 @@ if (isset($_POST["submit"])) {
               <div></div>
             </div>
 
-            <div>
-              <input type="text" name="answer1" class="answer-text" id="answer-short" value="Jawaban singkat" readonly>
-            </div>
-
-            <div class="answer-choice">
-              <div>
-                <input type="radio" id="answer-choice-cutton" disabled>
-                <input type="text" id="answer-choice-text" placeholder="option">
-              </div>
-              <a class="add-option" id="addOption">Tambah pilihan</a>
+            <div class="answer-div">
+              <input type="text" name="answer1" class="answer-text" value="Jawaban singkat" readonly>
             </div>
 
             <div class="utility">

@@ -153,9 +153,6 @@ body {
     border-radius: 5px;
     color: #666666;
     font-size: 15px;
-}
-
-#answer-short {
     padding: 5px 8px;
     margin-left: 15px;
     margin-block: 10px;
@@ -167,7 +164,7 @@ body {
     margin-left: 15px;
 }
 
-#answer-choice-text {
+.answer-choice-text {
     border: 0px;    
     border-radius: 5px;
     padding: 5px 5px;
@@ -187,6 +184,7 @@ body {
     font-size: 13px;
     background-color: rgb(51, 108, 110);
     color: #ffffff;
+    text-decoration: none;
 }
 
 .add-option:hover {
