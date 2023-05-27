@@ -54,16 +54,9 @@ if (isset($_POST["submit"])) {
     <!-- change tab -->
     <div class="header">
       <div class="navigation">
-<<<<<<< HEAD
         <a class="btn-tab" id="current-tab" href="manage.php">Manage</a>
         <a class="btn-tab" id="another-tab" href="fill.php">Fill</a>
         <a class="btn-tab" id="another-tab" href="response.php">Result</a>
-=======
-        <!-- <a class="btnTab" id="current-tab" href="manage.php">Manage</a>
-        <a class="btnTab" href="fill.php">Fill</a>
-        <a class="btnTab" href="response.php">Result</a> -->
-        <a href="home.php">Username</a>
->>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
       </div>
     </div>
     
@@ -87,7 +80,6 @@ if (isset($_POST["submit"])) {
               <label for="gambar1"><i class="fa-regular fa-image"></i></label>
               <div></div>
             </div>
-<<<<<<< HEAD
 
             <div>
               <input type="text" name="answer1" class="answer-text" id="answer-short" value="Jawaban singkat" readonly>
@@ -96,16 +88,11 @@ if (isset($_POST["submit"])) {
             <div class="answer-choice">
               <div>
                 <input type="radio" id="answer-choice-cutton" disabled>
-                <input type="text" id="answer-choice" placeholder="option">
+                <input type="text" id="answer-choice-text" placeholder="option">
               </div>
               <a class="add-option" id="addOption">Tambah pilihan</a>
             </div>
 
-=======
-            <div class="answer-div">
-              <input type="text" name="answer1" class="answer" value="Jawaban singkat" readonly>
-            </div>
->>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
             <div class="utility">
               <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>

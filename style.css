@@ -127,9 +127,6 @@ body {
     margin-bottom: 5px;
 }
 
-<<<<<<< HEAD
-#question {
-=======
 .kontainer-survei {
     width: 780px;   
     margin: auto;
@@ -140,7 +137,6 @@ body {
 }
 
 .question {
->>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
     border: 5px;
     border-radius: 10px;
     padding: 15px 15px;
@@ -152,11 +148,7 @@ body {
     margin-bottom: 5px;
 }
 
-<<<<<<< HEAD
 .answer-text {
-=======
-.answer {
->>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
     border: 0px;
     border-radius: 5px;
     color: #666666;
@@ -167,55 +159,21 @@ body {
     padding: 5px 8px;
     margin-left: 15px;
     margin-block: 10px;
-    width: 700px;
+    width: 710px;
     border-bottom: 2px solid rgb(105, 105, 105);
 }
 
-<<<<<<< HEAD
-#username-desc {
-    border: 0px;
-    border-radius: 5px;
-    padding-left: 20px;
-    padding-top: 15px;
-    font-size: 25px;
-    color: #333;
-}
-
-#username {
-    padding: 5px 8px;
+.answer-choice {
     margin-left: 15px;
-    margin-bottom: 10px;
-    width: 740px;
-    border-bottom: 2px solid rgb(105, 105, 105);
 }
 
-#title-fill {
-    font-size: 10px;
-}
-
-#desc-fill {
-
-}
-
-#answer-choice {
-=======
-.answerChoice {
->>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
-    border: 0px;
+#answer-choice-text {
+    border: 0px;    
     border-radius: 5px;
     padding: 5px 5px;
     font-size: 15px;
     color: #666666;
     width: 200px;
-    margin-bottom: 5px;
-}
-
-<<<<<<< HEAD
-#answer-choice-button {
-=======
-.answerChoiceButton {
->>>>>>> b31d4ef543934bc5579615699644560c0dc8603d
-    margin-left: 30px;
     margin-bottom: 5px;
 }
 
