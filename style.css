@@ -91,6 +91,15 @@ body {
     margin-bottom: 5px;
 }
 
+.kontainer-survei2 {
+    width: 780px;   
+    margin: auto;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
 .kontainer-send {
     width: 790px;   
     margin: auto;
@@ -127,15 +136,6 @@ body {
     margin-bottom: 5px;
 }
 
-.kontainer-survei {
-    width: 780px;   
-    margin: auto;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 5px;
-}
-
 .question {
     border: 5px;
     border-radius: 10px;
@@ -148,7 +148,7 @@ body {
     margin-bottom: 5px;
 }
 
-.answer-text {
+#answer-text {
     border: 0px;
     border-radius: 5px;
     color: #666666;
@@ -156,12 +156,8 @@ body {
     padding: 5px 8px;
     margin-left: 15px;
     margin-block: 10px;
-    width: 710px;
-    border-bottom: 2px solid rgb(105, 105, 105);
-}
-
-.answer-choice {
-    margin-left: 15px;
+    width: 300px;
+    border-bottom: 2px solid rgb(175, 175, 175);
 }
 
 .answer-choice-text {
@@ -171,6 +167,11 @@ body {
     font-size: 15px;
     color: #666666;
     width: 200px;
+    margin-bottom: 5px;
+}
+
+#answer-choice-button {
+    margin-left: 15px;
     margin-bottom: 5px;
 }
 
@@ -213,9 +214,12 @@ body {
     background-color: #ffffff;
     color: #333;
     width: 45px;
+    margin-bottom: 30px;
 }
 
-
+hr {
+    margin-bottom: 30px;
+}
 
 label:hover {
   cursor: pointer;

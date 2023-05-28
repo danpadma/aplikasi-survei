@@ -43,10 +43,6 @@ if (isset($_POST["submit"])) {
 <head>
     <title>Manage</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    <style>
-
-    </style>
     <script src="https://kit.fontawesome.com/3dc4dca5ea.js" crossorigin="anonymous"></script>
 </head>
 
@@ -82,7 +78,7 @@ if (isset($_POST["submit"])) {
             </div>
 
             <div class="answer-div">
-              <input type="text" name="answer1" class="answer-text" value="Jawaban singkat" readonly>
+              <input type="text" name="answer1" id="answer-text" value="Jawaban singkat" readonly>
             </div>
 
             <div class="utility">
@@ -94,6 +90,7 @@ if (isset($_POST["submit"])) {
               <button type="button" class="down-btn">v</button>
               <button type="button" class="hapus-btn">x</button>
               <button type="button" class="tambah-btn">+</button>
+              <hr>
             </div>
           </div>
         </div>

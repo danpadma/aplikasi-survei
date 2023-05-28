@@ -32,25 +32,29 @@ questions.addEventListener("click", function(e) {
         pertanyaanBaru.setAttributeNode(qboxAttr)
         // set inner HTML nya
         pertanyaanBaru.innerHTML = `
-            <div class="question-div">
-              <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ...">
-              <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
-              <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
-              <div></div>
-            </div>
-            <div class="answer-div">
-              <input type="text" name="answer`+ answerCount +`" class="answer-text" value="Jawaban singkat" readonly>
-            </div>
-            <div class="utility">
-              <select class="select">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <div class="question-div">
+            <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ...">
+            <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
+            <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
+        </div>
+
+        <div class="answer-div">
+            <input type="text" name="answer`+ answerCount +`" id="answer-text" value="Jawaban singkat" readonly>
+        </div>
+
+        <div class="utility">
+            <select class="select">
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
-              </select>
-              <button type="button" class="up-btn">^</button>
-              <button type="button" class="down-btn">v</button>
-              <button type="button" class="hapus-btn">x</button>
-              <button type="button" class="tambah-btn">+</button>
-            </div>
+            </select>
+            <button type="button" class="up-btn">^</button>
+            <button type="button" class="down-btn">v</button>
+            <button type="button" class="hapus-btn">x</button>
+            <button type="button" class="tambah-btn">+</button>
+            <hr>
+        </div>
         `;
         // kalo yg dipencet itu pertanyaan terakhir
         if (nextSibling == null) {
@@ -87,7 +91,7 @@ questions.addEventListener("click", function(e) {
             // kalo milih jawaban singkat
             if (e.target.value == "Jawaban Singkat") {
                 answer.innerHTML = `
-                    <input type="text" name="answer`+ answerCount +`" class="answer-text" value="Jawaban singkat" readonly>
+                    <input type="text" name="answer`+ answerCount +`" id="answer-text" value="Jawaban singkat" readonly>
                 `;
             }
             // kalo milih pilihan ganda
@@ -96,7 +100,7 @@ questions.addEventListener("click", function(e) {
                 answer.innerHTML = `
                     <div class="answer-choice">
                         <div>
-                            <input type="radio" class="answer-choice-button" disabled>
+                            <input type="radio" id="answer-choice-button" disabled>
                             <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="option">
                         </div>
                     </div>
@@ -110,7 +114,7 @@ questions.addEventListener("click", function(e) {
         optionCount++
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
-            <input type="radio" class="answer-choice-button" disabled>
+            <input type="radio" id="answer-choice-button" disabled>
             <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="option">
             <a href="" class="del-option">X</a>
         `;
