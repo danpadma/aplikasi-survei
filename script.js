@@ -115,7 +115,7 @@ questions.addEventListener("click", function(e) {
         opsiBaru.innerHTML = `
             <input type="radio" id="answer-choice-button" disabled>
             <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="Pilihan ...">
-            <a href="" id="del-option">  X  </a>
+            <a href="" class="del-option">  X  </a>
         `;
         // tambah child kontainer pilihan, opsi
         e.target.previousElementSibling.appendChild(opsiBaru)

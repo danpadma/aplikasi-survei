@@ -166,10 +166,11 @@ body {
     cursor: pointer;
 }
 
-#del-option {
+.del-option {
     padding: 5px;
     border-radius: 5px;
     background-color: rgb(255, 146, 146);
+    text-decoration: none;
 }
 
 .utility {
