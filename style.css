@@ -3,7 +3,7 @@
     padding-top: 50px;
     margin-top: -10px;
     margin-left: -10px;
-    margin-right: -10px;
+    margin-right: -7px;
     text-align: center;
     margin-bottom: 10px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -72,32 +72,13 @@ body {
     background-color: #b8b8b8;
 }
 
-.kontainer-title {
-    width: 760px;   
-    margin: auto;
-    background-color: #ffffff;
-    padding-block: 20px;
-    padding-inline: 20px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
 .kontainer-survei {
     width: 780px;   
     margin: auto;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 10px;
-    margin-bottom: 5px;
-}
-
-.kontainer-survei2 {
-    width: 780px;   
-    margin: auto;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .kontainer-send {
@@ -105,15 +86,6 @@ body {
     margin: auto;
     padding: 5px;
     text-align: right;
-}
-
-.kontainer-nama {
-    width: 780px;  
-    margin: auto;
-    margin-bottom: 10px;
-    padding-inline: 10px;
-    border-radius: 10px;
-    background-color: #ffffff;
 }
 
 #title {
@@ -156,6 +128,7 @@ body {
     padding: 5px 8px;
     margin-left: 15px;
     margin-block: 10px;
+    height: 30px;
     width: 300px;
     border-bottom: 2px solid rgb(175, 175, 175);
 }
@@ -171,6 +144,7 @@ body {
 }
 
 #answer-choice-button {
+    margin-top: 15px;
     margin-left: 15px;
     margin-bottom: 5px;
 }
@@ -190,6 +164,12 @@ body {
 
 .add-option:hover {
     cursor: pointer;
+}
+
+#del-option {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 146, 146);
 }
 
 .utility {
@@ -217,10 +197,59 @@ body {
     margin-bottom: 30px;
 }
 
-hr {
-    margin-bottom: 30px;
-}
-
 label:hover {
   cursor: pointer;
+}
+
+/* fill */
+
+.kontainer-nama {
+    width: 780px;  
+    margin: auto;
+    margin-bottom: 10px;
+    padding-block: 10px;
+    padding-inline: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.teks {
+    padding-inline: 15px;
+}
+
+#nama {
+    font-size: 26px;
+    color: #333;
+}
+
+.kontainer-title {
+    width: 780px;   
+    margin: auto;
+    background-color: #ffffff;
+    padding-block: 15px;
+    padding-inline: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#title-fill {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+#desc-fill {
+    font-size: 16px;
+    color: #555555;
+}
+
+.kontainer-survei-jawab {
+    width: 780px;   
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-inline: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }

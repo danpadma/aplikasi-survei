@@ -27,7 +27,7 @@ questions.addEventListener("click", function(e) {
         answerCount++
         // bikin question box baru
         const qboxAttr = document.createAttribute("class")
-        qboxAttr.value = "question-box"
+        qboxAttr.value = "kontainer-survei"
         const pertanyaanBaru = document.createElement("div")
         pertanyaanBaru.setAttributeNode(qboxAttr)
         // set inner HTML nya
@@ -53,7 +53,6 @@ questions.addEventListener("click", function(e) {
             <button type="button" class="down-btn">v</button>
             <button type="button" class="hapus-btn">x</button>
             <button type="button" class="tambah-btn">+</button>
-            <hr>
         </div>
         `;
         // kalo yg dipencet itu pertanyaan terakhir
@@ -101,7 +100,7 @@ questions.addEventListener("click", function(e) {
                     <div class="answer-choice">
                         <div>
                             <input type="radio" id="answer-choice-button" disabled>
-                            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="option">
+                            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="Pilihan ...">
                         </div>
                     </div>
                     <a href="" class="add-option">Tambah pilihan</a>
@@ -115,8 +114,8 @@ questions.addEventListener("click", function(e) {
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
             <input type="radio" id="answer-choice-button" disabled>
-            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="option">
-            <a href="" class="del-option">X</a>
+            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="Pilihan ...">
+            <a href="" id="del-option">  X  </a>
         `;
         // tambah child kontainer pilihan, opsi
         e.target.previousElementSibling.appendChild(opsiBaru)

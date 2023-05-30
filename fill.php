@@ -31,33 +31,33 @@ if (isset($_POST["submit"])) {
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Isi Survei <?= $survey["title"]; ?></title>
+    <title>Isi Survei - <?= $survey["title"]; ?></title>
 </head>
 <body>
     <!-- header -->
-        <div class="header">
-          <div class="navigation">
-            <a class="btn-tab" id="another-tab" href="manage.php">Manage</a>
-            <a class="btn-tab" id="current-tab" href="fill.php">Fill</a>
-            <a class="btn-tab" id="another-tab" href="response.php">Result</a>
-          </div>
-        </div>
+    <div class="header">
+      <div class="navigation">
+        <a class="btn-tab" id="another-tab" href="manage.php">Manage</a>
+        <a class="btn-tab" id="current-tab" href="fill.php">Fill</a>
+        <a class="btn-tab" id="another-tab" href="response.php">Result</a>
+      </div>
+    </div>
 
     <!-- form survei -->
     <form action="" method="post">
-        <div class="kontainer-nama">
-            <p id="username-desc">Masukkan nama anda</p>
-           <input type="text" name="username" class="answer-text" id="username" placeholder="Nama ..." required>
-        </div>
-        
         <div class="kontainer-title">
-            <p id="title-fill"><?= $survey["title"]; ?></p>
-            <p id="desc-fill"><?= $survey["description"]; ?></p>
+            <a class="teks" id="title-fill"><?= $survey["title"]; ?></a> <br>
+            <a class="teks" id="desc-fill"><?= $survey["description"]; ?></a>
+        </div>
+
+        <div class="kontainer-nama">
+            <a class="teks" id="nama">Masukkan nama Anda</a> <br>
+           <input type="text" name="username" id="answer-text" placeholder="Nama ..." required>
         </div>
         
-        <div class="kontainer-survei">
             <?php foreach ($questions as $row): ?>
-                <p><?= $row["question"]; ?></p>
+                <div class="kontainer-survei-jawab">
+                <a class="teks" id="nama"><?= $row["question"]; ?></a> <br>
                 <?php 
                     if ($row["image"] != "") {
                 ?>
@@ -76,21 +76,22 @@ if (isset($_POST["submit"])) {
                     // jawabannya isian
                     if (count($shortAnswers) != 0) { 
                 ?>
-                        <input type="text" name="answer<?= $answersCount; ?>" placeholder="Your answer">
+                        <input type="text" name="answer<?= $answersCount; ?>" id="answer-text" placeholder="Your answer">
+                        </div>
                 <?php 
                     }
                     // jawabannya pilihan
                     else if (count($optionAnswers) != 0) {
                         foreach ($optionAnswers as $x) {
                 ?>
-                            <input type="radio" name="option<?= $optionsCount; ?>" value="<?= $x["option"]; ?>"><?= $x["option"]; ?>
+                            <input type="radio" name="option<?= $optionsCount; ?>" id="answer-choice-button" value="<?= $x["option"]; ?>"><?= $x["option"]; ?>
                             <br>
+                            </div>
                 <?php
                         }
                     }
                 ?>
             <?php endforeach; ?>
-        </div>
         
         <div class="kontainer-send">
             <input type="submit" class="btn-basic" name="submit" value="Submit">

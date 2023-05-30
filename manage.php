@@ -66,35 +66,29 @@ if (isset($_POST["submit"])) {
       <input type="text" name="desc" id="desc" placeholder="Deskripsi (opsional)">
     </div>
 
-    <div class="kontainer-survei">
-        <!-- pertanyaan2 -->
-        <div class="questions">
-          <div class="question-box">
-            <div class="question-div">
-              <input type="text" name="question1" class="question" placeholder="Pertanyaan ...">
-              <input type="file" name="gambar1" id="gambar1" hidden>
-              <label for="gambar1"><i class="fa-regular fa-image"></i></label>
-              <div></div>
-            </div>
-
-            <div class="answer-div">
-              <input type="text" name="answer1" id="answer-text" value="Jawaban singkat" readonly>
-            </div>
-
-            <div class="utility">
-              <select class="select">
-                <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
-                <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
-              </select>
-              <button type="button" class="up-btn">^</button>
-              <button type="button" class="down-btn">v</button>
-              <button type="button" class="hapus-btn">x</button>
-              <button type="button" class="tambah-btn">+</button>
-              <hr>
-            </div>
-          </div>
+    <!-- pertanyaan2 -->
+    <div class="questions">
+      <div class="kontainer-survei">
+        <div class="question-div">
+          <input type="text" name="question1" class="question" placeholder="Pertanyaan ...">
+          <input type="file" name="gambar1" id="gambar1" hidden>
+          <label for="gambar1"><i class="fa-regular fa-image"></i></label>
+        </div>
+        <div class="answer-div">
+          <input type="text" name="answer1" id="answer-text" value="Jawaban singkat" readonly>
+        </div>
+        <div class="utility">
+          <select class="select">
+            <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
+            <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
+          </select>
+            <button type="button" class="up-btn">^</button>
+            <button type="button" class="down-btn">v</button>
+            <button type="button" class="hapus-btn">x</button>
+            <button type="button" class="tambah-btn">+</button>
         </div>
       </div>
+    </div>
       <div class="kontainer-send">
         <input type="submit" name="submit" class="btn-basic" value="Kirim">
       </div>
