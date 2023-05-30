@@ -47,15 +47,15 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <!-- change tab -->
+    <!-- header -->
     <div class="header">
-      <div class="navigation">
-        <a class="btn-tab" id="current-tab" href="manage.php">Manage</a>
-        <a class="btn-tab" id="another-tab" href="fill.php">Fill</a>
-        <a class="btn-tab" id="another-tab" href="response.php">Result</a>
-      </div>
+      <a class="header-judul">Buat Survey</a>
     </div>
-    
+
+    <!-- back to home -->
+    <div class="kontainer-home">
+      <a href="home.php" class="btn-basic">Kembali ke Home</a>
+    </div>
 
     <!-- form survei -->
     <form action="" method="post" enctype="multipart/form-data">
@@ -76,7 +76,7 @@ if (isset($_POST["submit"])) {
           <div></div> <!-- buat nampung gambar -->
         </div>
         <div class="answer-div">
-          <input type="text" name="answer1" id="answer-text" value="Jawaban singkat" readonly>
+          <input type="text" name="answer1" class="answer-text" value="Jawaban singkat" readonly>
         </div>
         <div class="utility">
           <select class="select">

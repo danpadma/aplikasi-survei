@@ -37,7 +37,7 @@ questions.addEventListener("click", function(e) {
         </div>
 
         <div class="answer-div">
-            <input type="text" name="answer`+ answerCount +`" id="answer-text" value="Jawaban singkat" readonly>
+            <input type="text" name="answer`+ answerCount +`" class="answer-text" value="Jawaban singkat" readonly>
         </div>
 
         <div class="utility">

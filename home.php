@@ -1,5 +1,6 @@
 <?php 
 require "functions.php";
+
 $surveys = query("SELECT * FROM surveys");
 ?>
 
@@ -11,15 +12,32 @@ $surveys = query("SELECT * FROM surveys");
 </head>
 <body>
     <div class="header">
-        <a href="manage.php">Create</a>
+        <a class="header-judul">Home</a>
     </div>
 
-    <h1>Survey yang udah kamu bikin</h1>
+    <div class="kontainer-home">
+        <a href="manage.php" class="btn-basic">Buat survey baru</a>
+    </div>
+
+    <div class="kontainer-teks">
+        <a id="nama">Survey yang sudah dibuat</a>
+    </div>
 
     <?php foreach ($surveys as $row): ?>
         <div class="kontainer-title">
-            <a href="response.php?id=<?= $row["id"]; ?>"><?= $row["title"]; ?></a>
-            <p>Link ngisi: <a href="fill.php?id=<?= $row["id"]; ?>">http://localhost/aplikasi-survei/fill.php?id=<?= $row["id"]; ?></a></p>
+            <table>
+                <tr>
+                    <td><a href="response.php?id=<?= $row["id"]; ?>" id="nama"><?= $row["title"]; ?></a></td>
+                    <td>link ngisi</td>
+                    <td>hapus</td> 
+                </tr>
+                <?php $rowid =  $row["id"]; ?>
+                <?php $responses = query("SELECT * FROM responses WHERE survey_id = $rowid"); ?>
+                <tr>
+                    <td>Jumlah responden: <?= count($responses); ?></td>
+                </tr>
+            </table>
+            <!-- <p>Link ngisi: <a href="fill.php?id=<?= $row["id"]; ?>">http://localhost/aplikasi-survei/fill.php?id=<?= $row["id"]; ?></a></p> -->
         </div>
     <?php endforeach; ?>
 </body>

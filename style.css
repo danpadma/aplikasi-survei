@@ -1,12 +1,17 @@
 .header {
     background-color: #f2f2f2;
-    padding-top: 50px;
+    padding: 10px;
     margin-top: -10px;
     margin-left: -10px;
     margin-right: -7px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header-judul {
+    font-size: 35px;
+    color: #333;
 }
 
 body {
@@ -46,17 +51,6 @@ body {
     text-align: center;
     cursor: pointer;
     text-decoration: none;
-}
-
-.btn-tab {
-    display: inline-block;
-    width: 100px;
-    padding: 5px 16px;
-    border-radius: 5px;
-    background-color: #eff7fa;
-    text-align: center;
-    font-size: 14px;
-    text-decoration: none;    
 }
 
 #current-tab {
@@ -120,14 +114,13 @@ body {
     margin-bottom: 5px;
 }
 
-#answer-text {
+.answer-text {
     border: 0px;
-    border-radius: 5px;
     color: #666666;
     font-size: 15px;
     padding: 5px 8px;
     margin-left: 15px;
-    margin-block: 10px;
+    margin-block: 10px; 
     height: 30px;
     width: 300px;
     border-bottom: 2px solid rgb(175, 175, 175);
@@ -189,13 +182,17 @@ body {
 
 .btn {
     padding: 10px;
-    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #ffffff;
     color: #333;
-    width: 45px;
-    margin-bottom: 30px;
+    width: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #ebebeb;
 }
 
 label:hover {
@@ -221,6 +218,19 @@ label:hover {
 #nama {
     font-size: 26px;
     color: #333;
+}
+
+.kontainer-home {
+    width: 800px;   
+    margin: auto;
+    padding-block: 20px;
+    text-align: center;
+}
+
+.kontainer-teks {
+    width: 800px;   
+    margin: auto;
+    padding-block: 20px;
 }
 
 .kontainer-title {
