@@ -15,7 +15,7 @@ questions.addEventListener("click", function(e) {
     // ambil previous sibling question box
     const prevSibling = questionBox.previousElementSibling
     // fitur tambah pertanyaan
-    if (e.target.className == "tambah-btn") {
+    if (e.target.className == "btn fa-solid fa-plus") {
         // tambah jumlah pertanyaan dan jawaban
         questionCount++
         gambarCount++
@@ -45,10 +45,10 @@ questions.addEventListener("click", function(e) {
                 <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
                 <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
             </select>
-            <button type="button" class="up-btn">^</button>
-            <button type="button" class="down-btn">v</button>
-            <button type="button" class="hapus-btn">x</button>
-            <button type="button" class="tambah-btn">+</button>
+            <i class="btn fa-solid fa-arrow-up"></i>
+            <i class="btn fa-solid fa-arrow-down"></i>
+            <i class="btn fa-solid fa-trash-can"></i>
+            <i class="btn fa-solid fa-plus"></i>
         </div>
         `;
         // kalo yg dipencet itu pertanyaan terakhir
@@ -63,17 +63,17 @@ questions.addEventListener("click", function(e) {
         }
     }
     // fitur delete (fitur delete ada di bawah fitur add biar childElementCount ga salah)
-    if (e.target.className == "hapus-btn" && questions.childElementCount > 1) { 
+    if (e.target.className == "btn fa-solid fa-trash-can" && questions.childElementCount > 1) { 
         // remove question box jika tombol hapus dipencet dan child element questions lebih dari 1 (ngga cuma 1 pertanyaan)
         questionBox.remove()
     }
     // fitur geser atas
-    if (e.target.className == "up-btn" && prevSibling != null) {
+    if (e.target.className == "btn fa-solid fa-arrow-up" && prevSibling != null) {
         // pindah question box ke sebelum prevSibling. Ini dapat dilakukan jika bukan pertanyaan pertama
         questions.insertBefore(questionBox, prevSibling)
     }
     // fitur geser bawah
-    if (e.target.className == "down-btn" && nextSibling != null) {
+    if (e.target.className == "btn fa-solid fa-arrow-down" && nextSibling != null) {
         // pindah next sibling question box ke sebelum question box. Lakukan ini hanya jika bukan pertanyaan terakhir
         questions.insertBefore(nextSibling, questionBox)
     }

@@ -187,7 +187,7 @@ body {
     width: 175px;
 }
 
-.up-btn, .down-btn, .hapus-btn, .tambah-btn {
+.btn {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
