@@ -7,7 +7,7 @@
 <body id="body-landing">
     <div class="kontainer-landing">
         <h1>Selamat datang</h1>
-        <a href="manage.php" class="btn-basic">Buat survey</a>
+        <a href="home.php" class="btn-basic">Masuk</a>
     </div>
 </body>
 </html>

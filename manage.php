@@ -73,6 +73,7 @@ if (isset($_POST["submit"])) {
           <input type="text" name="question1" class="question" placeholder="Pertanyaan ...">
           <input type="file" name="gambar1" id="gambar1" hidden>
           <label for="gambar1"><i class="fa-regular fa-image"></i></label>
+          <div></div> <!-- buat nampung gambar -->
         </div>
         <div class="answer-div">
           <input type="text" name="answer1" id="answer-text" value="Jawaban singkat" readonly>
@@ -84,7 +85,7 @@ if (isset($_POST["submit"])) {
           </select>
             <button type="button" class="up-btn">^</button>
             <button type="button" class="down-btn">v</button>
-            <button type="button" class="hapus-btn">x</button>
+            <button type="button" class="hapus-btn"><i class="fa-solid fa-trash-can"></i></button>
             <button type="button" class="tambah-btn">+</button>
         </div>
       </div>

@@ -1,8 +1,3 @@
-// cegah link current tab untuk mereload
-// document.getElementById("current-tab").addEventListener("click", function(e) {
-//     e.preventDefault()
-// })
-
 // ambil questions
 const questions = document.getElementsByClassName("questions")[0]
 
@@ -38,6 +33,7 @@ questions.addEventListener("click", function(e) {
             <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ...">
             <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
             <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
+            <div></div>
         </div>
 
         <div class="answer-div">
@@ -99,8 +95,8 @@ questions.addEventListener("click", function(e) {
                 answer.innerHTML = `
                     <div class="answer-choice">
                         <div>
-                            <input type="radio" id="answer-choice-button" disabled>
-                            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="Pilihan ...">
+                            <input type="radio" class="answer-choice-button" disabled>
+                            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" required placeholder="Pilihan ...">
                         </div>
                     </div>
                     <a href="" class="add-option">Tambah pilihan</a>
@@ -113,8 +109,8 @@ questions.addEventListener("click", function(e) {
         optionCount++
         const opsiBaru = document.createElement("div")
         opsiBaru.innerHTML = `
-            <input type="radio" id="answer-choice-button" disabled>
-            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" placeholder="Pilihan ...">
+            <input type="radio" class="answer-choice-button" disabled>
+            <input type="text" name="option`+ optionCount +`" class="answer-choice-text" required placeholder="Pilihan ...">
             <a href="" class="del-option">  X  </a>
         `;
         // tambah child kontainer pilihan, opsi

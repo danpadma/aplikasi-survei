@@ -1,9 +1,6 @@
 <?php 
-
 require "functions.php";
-
 $surveys = query("SELECT * FROM surveys");
-
 ?>
 
 <!DOCTYPE html>
