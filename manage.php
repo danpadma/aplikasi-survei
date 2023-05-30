@@ -83,10 +83,10 @@ if (isset($_POST["submit"])) {
             <option class="choice" value="Jawaban Singkat">Jawaban Singkat</option>
             <option class="choice" value="Pilihan Ganda">Pilihan Ganda</option>
           </select>
-            <button type="button" class="up-btn">^</button>
-            <button type="button" class="down-btn">v</button>
+            <button type="button" class="up-btn"><i class="fa-solid fa-arrow-up"></i></button>
+            <button type="button" class="down-btn"><i class="fa-solid fa-arrow-down"></i></button>
             <button type="button" class="hapus-btn"><i class="fa-solid fa-trash-can"></i></button>
-            <button type="button" class="tambah-btn">+</button>
+            <button type="button" class="tambah-btn"><i class="fa-solid fa-plus"></i></i></button>
         </div>
       </div>
     </div>
