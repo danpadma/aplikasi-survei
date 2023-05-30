@@ -12,18 +12,31 @@ $responses = query("SELECT * FROM responses WHERE survey_id = $surveyId");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Response - <?= $survey["title"]; ?></title>
 </head>
 <body>
-    <h1>Responses</h1>
-    <h1><?= $survey["title"]; ?></h1>
-    <h2><?= count($responses); ?> Responden</h2>
-    <?php foreach ($responses as $row): ?>
-        <a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>"><?= $row["username"]; ?></a> <br>
-    <?php endforeach; ?>
-    <a href="home.php">Kembali</a>
+    <div class="header">
+        <div class="navigation">
+            <a class="btn-tab" id="another-tab" href="manage.php">Manage</a>
+            <a class="btn-tab" id="another-tab" href="fill.php">Fill</a>
+            <a class="btn-tab" id="current-tab" href="response.php">Result</a>
+        </div>
+    </div>
+
+    <div class="kontainer-title">
+        <a><?= $survey["title"]; ?></a> <br>
+        <a><?= count($responses); ?> Responden</a>
+    </div>
+
+    <div class="kontainer-title">
+        <?php foreach ($responses as $row): ?>
+            <a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>"><?= $row["username"]; ?></a> <br>
+        <?php endforeach; ?> <br>
+    </div>
+
+    <div class="kontainer-send">
+        <a href="home.php">Kembali</a>
+    </div>
 </body>
 </html>

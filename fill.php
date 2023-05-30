@@ -86,12 +86,12 @@ if (isset($_POST["submit"])) {
                 ?>
                             <input type="radio" name="option<?= $optionsCount; ?>" id="answer-choice-button" value="<?= $x["option"]; ?>"><?= $x["option"]; ?>
                             <br>
-                            </div>
                 <?php
                         }
                     }
                 ?>
             <?php endforeach; ?>
+            </div>
         
         <div class="kontainer-send">
             <input type="submit" class="btn-basic" name="submit" value="Submit">
