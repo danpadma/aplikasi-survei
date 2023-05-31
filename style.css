@@ -348,3 +348,20 @@ label:hover {
     text-align: center;
     padding-block: 10px;
 }
+
+/* detail */
+
+.teks-pertanyaan {
+    font-size: 30px;
+    color: #222;
+}
+
+.teks-jawabanshort {
+    padding-inline: 10px;
+    color: #333;
+    border-bottom: 2px solid #555;
+}
+
+.teks-opsi {
+    margin-left: 10px;
+}

@@ -20,58 +20,76 @@ $jawabanNo = 0;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Detail Respon</title>
 </head>
 <body>
-    <h1>Username: <?= $responden["username"]; ?></h1>
-    <h1><?= $survey["title"]; ?></h1>
-    <h3><?= $survey["description"]; ?></h3>
-    <?php foreach ($questions as $row): ?>
-        <p><?= $row["question"]; ?></p>
-        <?php 
-            if ($row["image"] != "") {
-        ?>
-                <div>
-                    <img src="img/<?= $row["image"]; ?>" alt="" width="300">
-                </div>
-        <?php
-            }
-        ?>
-        <?php 
-            $questionId = $row["id"]; 
-            $shortAnswers = query("SELECT * FROM answer_short WHERE question_id = $questionId");
-            $optionAnswers = query("SELECT * FROM answer_options WHERE question_id = $questionId");
-            // jawabannya isian
-            if (count($shortAnswers) != 0) { 
-        ?>
-               <p style="background-color: greenyellow;"><?= $responsesAndAnswers[$jawabanNo]["answer"]; ?></p> 
-        <?php 
-            }
-            // jawabannya pilihan
-            else if (count($optionAnswers) != 0) {
-                foreach ($optionAnswers as $x) {
-                    // opsi yang dipilih
-                    if ($x["option"] == $responsesAndAnswers[$jawabanNo]["answer"]) {
+    <!-- header -->
+    <div class="header">
+        <a class="header-judul">Detail Respon</a>
+    </div>
 
-        ?>
-                        <span style="background-color: greenyellow;"><input type="radio" name="option" value="<?= $x["option"]; ?>" disabled><?= $x["option"]; ?></span>
-        <?php
-                    } else {
-        ?>
-                        <input type="radio" name="option" value="<?= $x["option"]; ?>" disabled><?= $x["option"]; ?>
-        <?php
-                    }
-        ?>
-                    <br>
-        <?php
+    <!-- back to home -->
+    <div class="kontainer-home">
+        <a href="home.php" class="btn-basic">Kembali ke Home</a>
+    </div>
+
+    <!-- nama survey -->
+    <div class="kontainer-title">
+        <a class="teks-judulfill"><?= $survey["title"]; ?></a> <br>
+        <a class="teks-deskfill"><?= $survey["description"]; ?></a>
+    </div>
+
+    <!-- nama responden -->
+    <div class="kontainer-title">
+        <a>Username: <?= $responden["username"]; ?></a>
+    </div>
+
+    <!-- list jawaban -->
+    <?php foreach ($questions as $row): ?>
+        <div class="kontainer-surveijawab">
+            <a class="teks-pertanyaan"><?= $row["question"]; ?></a> <br>
+            <?php 
+                if ($row["image"] != "") {
+            ?>
+                    <div>
+                        <img src="img/<?= $row["image"]; ?>" alt="" width="300">
+                    </div>
+            <?php
                 }
-            }
-            $jawabanNo++;
-        ?>
+            ?>
+            <?php 
+                $questionId = $row["id"]; 
+                $shortAnswers = query("SELECT * FROM answer_short WHERE question_id = $questionId");
+                $optionAnswers = query("SELECT * FROM answer_options WHERE question_id = $questionId");
+                // jawabannya isian
+                if (count($shortAnswers) != 0) { 
+            ?>
+                   <a class="teks-jawabanshort"><?= $responsesAndAnswers[$jawabanNo]["answer"]; ?></a> 
+            <?php 
+                }
+                // jawabannya pilihan
+                else if (count($optionAnswers) != 0) {
+                    foreach ($optionAnswers as $x) {
+                        // opsi yang dipilih
+                        if ($x["option"] == $responsesAndAnswers[$jawabanNo]["answer"]) {
+
+            ?>
+                            <span><input type="radio" name="option" value="<?= $x["option"]; ?>" disabled checked><a class="teks-opsi"><?= $x["option"]; ?></a></span>
+            <?php
+                        } else {
+            ?>
+                            <input type="radio" name="option" value="<?= $x["option"]; ?>" disabled><a class="teks-opsi"><?= $x["option"]; ?></a>
+            <?php
+                        }
+            ?>
+                        <br>
+            <?php
+                    }
+                }
+                $jawabanNo++;
+            ?>
+        </div>
     <?php endforeach; ?>
-    <a href="response.php?id=<?= $surveyId; ?>">Kembali</a>
 </body>
 </html>
