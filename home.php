@@ -22,7 +22,7 @@ $i=1
     </div>
 
     <div class="kontainer-teks">
-        <a id="nama">Survey yang sudah dibuat: </a>
+        <a class="teks-surveidibuat">Survey yang sudah dibuat: </a>
     </div>
 
     <?php foreach ($surveys as $row): ?>

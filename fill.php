@@ -36,28 +36,31 @@ if (isset($_POST["submit"])) {
 <body>
     <!-- header -->
     <div class="header">
-      <div class="navigation">
-        <a class="btn-tab" id="another-tab" href="manage.php">Manage</a>
-        <a class="btn-tab" id="current-tab" href="fill.php">Fill</a>
-        <a class="btn-tab" id="another-tab" href="response.php">Result</a>
-      </div>
+        <a class="header-judul">Isi Survei</a>
+    </div>
+
+    <!-- back to home -->
+    <div class="kontainer-home">
+        <a href="home.php" class="btn-basic">Kembali ke Home</a>
     </div>
 
     <!-- form survei -->
     <form action="" method="post">
         <div class="kontainer-title">
-            <a class="teks" id="title-fill"><?= $survey["title"]; ?></a> <br>
-            <a class="teks" id="desc-fill"><?= $survey["description"]; ?></a>
+            <a class="teks-judulfill"><?= $survey["title"]; ?></a> <br>
+            <a class="teks-deskfill"><?= $survey["description"]; ?></a>
         </div>
 
-        <div class="kontainer-nama">
-            <a class="teks" id="nama">Masukkan nama Anda</a> <br>
-           <input type="text" name="username" id="answer-text" placeholder="Nama ..." required>
+
+
+        <div class="kontainer-masukkannama">
+            <a class="teks-nama">Masukkan nama Anda</a> <br>
+            <input type="text" name="username" class="input-nama" placeholder="Nama ..." required>
         </div>
         
             <?php foreach ($questions as $row): ?>
-                <div class="kontainer-survei-jawab">
-                <a class="teks" id="nama"><?= $row["question"]; ?></a> <br>
+                <div class="kontainer-surveijawab">
+                <a class="teks-nama"><?= $row["question"]; ?></a> <br>
                 <?php 
                     if ($row["image"] != "") {
                 ?>
@@ -76,7 +79,7 @@ if (isset($_POST["submit"])) {
                     // jawabannya isian
                     if (count($shortAnswers) != 0) { 
                 ?>
-                        <input type="text" name="answer<?= $answersCount; ?>" id="answer-text" placeholder="Your answer">
+                        <input type="text" name="answer<?= $answersCount; ?>" class="input-nama" placeholder="Jawaban ...">
                         </div>
                 <?php 
                     }
@@ -84,7 +87,7 @@ if (isset($_POST["submit"])) {
                     else if (count($optionAnswers) != 0) {
                         foreach ($optionAnswers as $x) {
                 ?>
-                            <input type="radio" name="option<?= $optionsCount; ?>" id="answer-choice-button" value="<?= $x["option"]; ?>"><?= $x["option"]; ?>
+                            <input type="radio" name="option<?= $optionsCount; ?>" id="answer-choice-button" value="<?= $x["option"]; ?>"> <a class="teks-pilihan"><?= $x["option"]; ?></a>
                             <br>
                 <?php
                         }

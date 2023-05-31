@@ -199,27 +199,6 @@ label:hover {
   cursor: pointer;
 }
 
-/* fill */
-
-.kontainer-nama {
-    width: 780px;  
-    margin: auto;
-    margin-bottom: 10px;
-    padding-block: 10px;
-    padding-inline: 10px;
-    border-radius: 10px;
-    background-color: #ffffff;
-}
-
-.teks {
-    padding-inline: 15px;
-}
-
-#nama {
-    font-size: 26px;
-    color: #333;
-}
-
 .kontainer-home {
     width: 800px;   
     margin: auto;
@@ -243,29 +222,12 @@ label:hover {
     margin-bottom: 10px;
 }
 
-#title-fill {
-    font-size: 26px;
-    font-weight: bold;
-    color: #333;
-}
-
-#desc-fill {
-    font-size: 16px;
-    color: #555555;
-}
-
-.kontainer-survei-jawab {
-    width: 780px;   
-    margin: auto;
-    padding-top: 15px;
-    padding-bottom: 25px;
-    padding-inline: 10px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
 /* home */
+
+.teks-surveidibuat {
+    font-size: 25px;
+    color: #222;
+}
 
 .td-jumlahresponden {
     width: 330px;
@@ -295,4 +257,59 @@ label:hover {
     border-radius: 10px;
     background-color: #ffffff;
     margin-bottom: 10px;
+}
+
+/* fill */
+
+.teks-judulfill {
+    font-size: 35px;
+    font-weight: bold;
+    padding-inline: 15px;
+}
+
+.teks-deskfill {
+    font-size: 18px;
+    color:#444;
+    padding-inline: 15px;
+}
+
+.kontainer-masukkannama {
+    width: 740px;  
+    margin: auto;
+    margin-bottom: 10px;
+    padding-block: 10px;
+    padding-inline: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.teks-nama {
+    font-size: 26px;
+    color: #333;
+}
+
+.input-nama {
+    border: 0px;
+    color: #353535;
+    font-size: 15px;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+    height: 30px;
+    width: 300px;
+    border-bottom: 2px solid rgb(145, 145, 145);
+}
+
+.kontainer-surveijawab {
+    width: 735px;   
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-inline: 33px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.teks-pilihan {
+    color: #333;
 }
