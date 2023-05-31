@@ -5,7 +5,7 @@ require "functions.php";
 if (isset($_POST["submit"])) {
   // tambah survey
   if (tambahSurvey($_POST) > 0) {
-    echo "<script>alert('data berhasil ditambahkan');document.location.href = 'home.php';</script>";
+    echo "<script>alert('Berhasil menambahkan survey');document.location.href = 'home.php';</script>";
     // var_dump($_FILES);
     // dapetin last id yg dimasukin di surveys
     $surveyId = mysqli_insert_id($conn);

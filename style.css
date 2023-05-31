@@ -228,17 +228,17 @@ label:hover {
 }
 
 .kontainer-teks {
-    width: 800px;   
+    width: 690px;   
     margin: auto;
     padding-block: 20px;
 }
 
 .kontainer-title {
-    width: 780px;   
+    width: 760px;   
     margin: auto;
     background-color: #ffffff;
     padding-block: 15px;
-    padding-inline: 10px;
+    padding-inline: 20px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -262,5 +262,37 @@ label:hover {
     padding-inline: 10px;
     background-color: #ffffff;
     border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* home */
+
+.td-jumlahresponden {
+    width: 330px;
+    padding-left: 10px;
+}
+
+.td-nomorresponden {
+    width: 40px;
+    padding-left: 25px;
+    border-radius: 10px 0 0 10px;
+    font-size: 30px;
+    background-color: #dbdbdb;
+    border: 0px;
+}
+
+.td-namasurvei {
+    padding-left: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.kontainer-detailsurvei {
+    width: 700px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #ffffff;
     margin-bottom: 10px;
 }
