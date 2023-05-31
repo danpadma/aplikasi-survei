@@ -8,6 +8,8 @@ $survey = query("SELECT * FROM surveys WHERE id = $surveyId")[0];
 
 $responses = query("SELECT * FROM responses WHERE survey_id = $surveyId");
 
+$i = 1;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,27 +18,40 @@ $responses = query("SELECT * FROM responses WHERE survey_id = $surveyId");
     <title>Response - <?= $survey["title"]; ?></title>
 </head>
 <body>
+
+    <!-- header -->    
     <div class="header">
-        <div class="navigation">
-            <a class="btn-tab" id="another-tab" href="manage.php">Manage</a>
-            <a class="btn-tab" id="another-tab" href="fill.php">Fill</a>
-            <a class="btn-tab" id="current-tab" href="response.php">Result</a>
-        </div>
+        <a class="header-judul">Hasil Survei</a>
     </div>
 
-    <div class="kontainer-title">
-        <a><?= $survey["title"]; ?></a> <br>
+    <!-- back to home -->
+    <div class="kontainer-home">
+        <a href="home.php" class="btn-basic">Kembali ke Home</a>
+    </div>
+
+    <!-- nama survei & jumlah responden -->
+    <div class="kontainer-namasurveiresponden">
+        <a class="teks-nama"><?= $survey["title"]; ?></a> <br>
         <a><?= count($responses); ?> Responden</a>
     </div>
 
-    <div class="kontainer-title">
-        <?php foreach ($responses as $row): ?>
-            <a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>"><?= $row["username"]; ?></a> <br>
-        <?php endforeach; ?> <br>
+    <!-- pengisi survei -->
+    <div class="kontainer-listresponden">
+        <table>
+            <tr>
+                <th class="td-nomor">No</td>
+                <th class="td-nama">Nama</td>
+                <th>Aksi</td>
+            </tr>
+            <?php foreach ($responses as $row): ?>
+                <tr>
+                    <td class="tdnomor"><?php echo $i; $i = $i + 1 ?></td>
+                    <td><a><?= $row["username"]; ?></a></td>
+                    <td><a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>">Lihat detail</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div>
 
-    <div class="kontainer-send">
-        <a href="home.php">Kembali</a>
-    </div>
 </body>
 </html>

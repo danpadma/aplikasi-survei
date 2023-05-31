@@ -313,3 +313,38 @@ label:hover {
 .teks-pilihan {
     color: #333;
 }
+
+/* response */
+
+.kontainer-namasurveiresponden {
+    width: 760px;   
+    margin: auto;
+    background-color: #ffffff;
+    padding-block: 15px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.kontainer-listresponden {
+    width: 760px;   
+    margin: auto;
+    background-color: #ffffff;
+    padding-block: 15px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.td-nomor {
+    width: 50px;
+}
+
+.td-nama {
+    width: 500px;
+}
+
+.tdnomor {
+    text-align: center;
+    padding-block: 10px;
+}
