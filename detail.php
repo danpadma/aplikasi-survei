@@ -31,7 +31,7 @@ $jawabanNo = 0;
 
     <!-- back to home -->
     <div class="kontainer-home">
-        <a href="home.php" class="btn-basic">Kembali ke Home</a>
+        <a href="response.php?id=<?= $surveyId; ?>" class="btn-basic">Kembali</a>
     </div>
 
     <!-- nama survey -->
@@ -75,11 +75,11 @@ $jawabanNo = 0;
                         if ($x["option"] == $responsesAndAnswers[$jawabanNo]["answer"]) {
 
             ?>
-                            <span><input type="radio" name="option" value="<?= $x["option"]; ?>" disabled checked><a class="teks-opsi"><?= $x["option"]; ?></a></span>
+                            <span><input type="radio" class="answer-choice-button" name="option" value="<?= $x["option"]; ?>" disabled checked><a class="teks-opsi"><?= $x["option"]; ?></a></span>
             <?php
                         } else {
             ?>
-                            <input type="radio" name="option" value="<?= $x["option"]; ?>" disabled><a class="teks-opsi"><?= $x["option"]; ?></a>
+                            <input type="radio" class="answer-choice-button" name="option" value="<?= $x["option"]; ?>" disabled><a class="teks-opsi"><?= $x["option"]; ?></a>
             <?php
                         }
             ?>

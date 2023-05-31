@@ -1,3 +1,13 @@
+/* pake google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); /* montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* poppins */
+
+body {
+    background-color: #cce3ec;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+}
+
 .header {
     background-color: #f2f2f2;
     padding: 10px;
@@ -6,17 +16,11 @@
     margin-right: -7px;
     text-align: center;
     margin-bottom: 5px;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .header-judul {
     font-size: 35px;
     color: #333;
-}
-
-body {
-    background-color: #cce3ec;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #body-landing {
@@ -193,6 +197,24 @@ body {
 
 .btn:hover {
     background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.btn-danger {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #d72503;
+    color: #fff;
+    width: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-danger:hover {
+    background-color: #ebebeb;
+    color: #d72503;
+    cursor: pointer;
 }
 
 label:hover {
@@ -364,4 +386,29 @@ label:hover {
 
 .teks-opsi {
     margin-left: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+.modal {
+    width: 500px;
+    height: 200px;
+    background-color: dodgerblue;
+    /* jangan diganti */
+    display: none; 
+    position: fixed;
+    z-index: 99;
+    /* taruh di tengah  */
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -100px;
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

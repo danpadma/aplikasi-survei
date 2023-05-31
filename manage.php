@@ -70,7 +70,7 @@ if (isset($_POST["submit"])) {
     <div class="questions">
       <div class="kontainer-survei">
         <div class="question-div">
-          <input type="text" name="question1" class="question" placeholder="Pertanyaan ...">
+          <input type="text" name="question1" class="question" placeholder="Pertanyaan ..." required>
           <input type="file" name="gambar1" id="gambar1" hidden>
           <label for="gambar1"><i class="fa-regular fa-image"></i></label>
           <div></div> <!-- buat nampung gambar -->

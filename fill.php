@@ -10,6 +10,7 @@ $questions = query("SELECT * FROM questions WHERE survey_id = $surveyId");
 
 $answersCount = 0;
 $optionsCount = 0;
+$optionsCountId = 0;
 
 if (isset($_POST["submit"])) {
     $username = $_POST["username"];
@@ -23,6 +24,9 @@ if (isset($_POST["submit"])) {
             mysqli_query($conn, "INSERT INTO answers (response_id, answer) VALUES ('$responseId', '$value')");
         }    
     }
+
+    header("Location: arigatou.php?username=$username");
+    exit;
 }
 
 ?>
@@ -37,11 +41,6 @@ if (isset($_POST["submit"])) {
     <!-- header -->
     <div class="header">
         <a class="header-judul">Isi Survei</a>
-    </div>
-
-    <!-- back to home -->
-    <div class="kontainer-home">
-        <a href="home.php" class="btn-basic">Kembali ke Home</a>
     </div>
 
     <!-- form survei -->
@@ -87,9 +86,11 @@ if (isset($_POST["submit"])) {
                     else if (count($optionAnswers) != 0) {
                         foreach ($optionAnswers as $x) {
                 ?>
-                            <input type="radio" name="option<?= $optionsCount; ?>" id="answer-choice-button" value="<?= $x["option"]; ?>"> <a class="teks-pilihan"><?= $x["option"]; ?></a>
+                            <input type="radio" name="option<?= $optionsCount; ?>" id ="option<?= $optionsCountId; ?>" class="answer-choice-button" value="<?= $x["option"]; ?>"> 
+                            <label for="option<?= $optionsCountId; ?>" class="teks-pilihan"><?= $x["option"]; ?></label>
                             <br>
                 <?php
+                            $optionsCountId++;
                         }
                     }
                 ?>

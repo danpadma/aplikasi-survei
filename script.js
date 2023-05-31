@@ -30,7 +30,7 @@ questions.addEventListener("click", function(e) {
         <link rel="stylesheet" type="text/css" href="style.css">
 
         <div class="question-div">
-            <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ...">
+            <input type="text" name="question`+ questionCount +`" class="question" placeholder="Pertanyaan ..." required>
             <input type="file" name="gambar`+ gambarCount +`" id="gambar`+ gambarCount +`" hidden>
             <label for="gambar`+ gambarCount +`"><i class="fa-regular fa-image"></i></label>
             <div></div>
