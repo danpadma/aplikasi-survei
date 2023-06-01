@@ -279,15 +279,7 @@ label:hover {
 }
 
 .btn-salin {
-    width: 120px;
-    padding: 10px;
-    border: 1px solid #808080;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: #ffffff;
-    color: #333;
-    text-align: center;
-    margin-left: 350px;
+    width: 100%;
 }
 
 .btn-salin:hover {
@@ -450,6 +442,28 @@ table {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0 0 0 5px;
+}
+
+.left-content {
+    flex-basis: 85%;
+    cursor: pointer;
+}
+
+.right-content {
+    flex-basis: 15%;
+    border-left: 1px solid #000;
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.right-content:hover {
+    cursor: pointer;
+    background-color: #d8d8d8;
 }
 
 /* terima kasih */

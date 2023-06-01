@@ -86,7 +86,7 @@ questions.addEventListener("click", function(e) {
             // kalo milih jawaban singkat
             if (e.target.value == "Jawaban Singkat") {
                 answer.innerHTML = `
-                    <input type="text" name="answer`+ answerCount +`" id="answer-text" value="Jawaban singkat" readonly>
+                    <input type="text" name="answer`+ answerCount +`" class="answer-text" value="Jawaban singkat" readonly>
                 `;
             }
             // kalo milih pilihan ganda

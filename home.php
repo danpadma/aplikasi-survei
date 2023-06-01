@@ -60,9 +60,11 @@ $deleteModalIndex = 1;
                 <!-- share modal box -->
                 <div id="shareModal<?= $shareModalIndex; ?>" class="modal">
                     <i class="btn fa-solid fa-xmark"></i> <br>
-                    <a>Link untuk mengisi survei</a> <br>
-                    <span><b>http://localhost/aplikasi-survei/fill.php?id=<?= $row["id"]; ?></b></span> <br> <br>
-                    <i class="btn-salin fa-regular fa-copy">    Salin</i>
+                    <a>Link isi survei</a> <br>
+                    <div class="modal-content">
+                        <div class="left-content">http://localhost/aplikasi-survei/fill.php?id=<?= $row["id"]; ?></div>
+                        <div class="right-content">Salin</div>
+                    </div>
                 </div>  
                 <!-- delete modal box -->
                 <div id="deleteModal<?= $deleteModalIndex; ?>" class="modal">
@@ -98,12 +100,23 @@ $deleteModalIndex = 1;
                 e.target.parentElement.style.display = "none"
             }
             // copy to clipboard
-            if (e.target.className == "btn-salin fa-regular fa-copy") {
-                let copyText = e.target.previousElementSibling
-                navigator.clipboard.writeText(copyText.innerHTML)
+            if (e.target.className == "left-content" || e.target.className == "right-content") {
+                let salin = ""
+                if (e.target.className == "left-content") {
+                    navigator.clipboard.writeText(e.target.innerHTML)
+                    salin = e.target.nextElementSibling
+                } else if (e.target.className == "right-content") {
+                    navigator.clipboard.writeText(e.target.previousElementSibling.innerHTML)
+                    salin = e.target
+                }
                 // ubah jadi check mark
-                e.target.className = "btn-salin fa-solid fa-check"
-                e.target.style = "color: #4ab036;"
+                salin.innerHTML = "Disalin"
+                salin.style = "color: #4ab036;"
+                // tuggu 2 detik ubah lagi
+                setTimeout(function() {
+                    salin.innerHTML = "Salin"
+                    salin.style = "color: #000"
+                }, 2000)
             }
             // tombol delete dipencet => tampilkan delete modal box
             if (e.target.className == "btn-aksihome fa-solid fa-trash-can") {
