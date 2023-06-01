@@ -187,33 +187,16 @@ body {
 .btn {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     background-color: #ffffff;
     color: #333;
     width: 20px;
     text-align: center;
     margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .btn:hover {
     background-color: #ebebeb;
-    cursor: pointer;
-}
-
-.btn-danger {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #d72503;
-    color: #fff;
-    width: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.btn-danger:hover {
-    background-color: #ebebeb;
-    color: #d72503;
     cursor: pointer;
 }
 
@@ -252,7 +235,7 @@ label:hover {
 }
 
 .td-jumlahresponden {
-    width: 330px;
+    width: 400px;
     padding-left: 10px;
 }
 
@@ -279,6 +262,55 @@ label:hover {
     border-radius: 10px;
     background-color: #ffffff;
     margin-bottom: 10px;
+}
+
+.btn-aksihome {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.btn-aksihome:hover {
+    background-color: #d8d8d8;
+    cursor: pointer;
+}
+
+.btn-salin {
+    width: 120px;
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    margin-left: 350px;
+}
+
+.btn-salin:hover {
+    background-color: #d8d8d8;
+    cursor: pointer;
+}
+
+.btn-hapus {
+    width: 120px;
+    padding: 10px;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    margin-left: 420px;
+    text-decoration: none;
+}
+
+.btn-hapus:hover {
+    background-color: #d8d8d8;
+    cursor: pointer;
 }
 
 /* fill */
@@ -366,9 +398,13 @@ label:hover {
     width: 500px;
 }
 
-.tdnomor {
+.tdnomor, .tdaksi {
     text-align: center;
     padding-block: 10px;
+}
+
+.tdnama {
+    padding-left: 30px;
 }
 
 /* detail */
@@ -394,8 +430,11 @@ table {
 
 .modal {
     width: 500px;
-    height: 200px;
-    background-color: dodgerblue;
+    height: 180px;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgb(136, 136, 136);
+    background-color: rgb(233, 233, 233);
     /* jangan diganti */
     display: none; 
     position: fixed;
@@ -411,4 +450,12 @@ table {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* terima kasih */
+.teks-terimakasih {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

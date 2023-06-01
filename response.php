@@ -14,6 +14,10 @@ $i = 1;
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Response - <?= $survey["title"]; ?></title>
 </head>
@@ -46,8 +50,8 @@ $i = 1;
             <?php foreach ($responses as $row): ?>
                 <tr>
                     <td class="tdnomor"><?php echo $i; $i = $i + 1 ?></td>
-                    <td><a><?= $row["username"]; ?></a></td>
-                    <td><a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>">Lihat detail</a></td>
+                    <td class="tdnama"><a><?= $row["username"]; ?></a></td>
+                    <td class="tdaksi"><a href="detail.php?id=<?= $row["id"]; ?>&sid=<?= $surveyId; ?>">Lihat detail</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
