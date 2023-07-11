@@ -90,14 +90,14 @@ if (isset($_POST["submit"])) {
                     else if (count($optionAnswers) != 0) {
                         foreach ($optionAnswers as $x) {
                 ?>
-                            <input type="radio" name="option<?= $optionsCount; ?>" id ="option<?= $optionsCountId; ?>" class="answer-choice-button" value="<?= $x["option"]; ?>"> 
-                            <label for="option<?= $optionsCountId; ?>" class="teks-pilihan"><?= $x["option"]; ?></label>
-                            <br>
+                        <input type="radio" name="option<?= $optionsCount; ?>" id ="option<?= $optionsCountId; ?>" class="answer-choice-button" value="<?= $x["option"]; ?>"> 
+                        <label for="option<?= $optionsCountId; ?>" class="teks-pilihan"><?= $x["option"]; ?></label>
+                        <br>
                 <?php
                             $optionsCountId++;
-                        }
-                    }
-                ?>
+                        } ?>
+                </div>
+                <?php } ?>
             <?php endforeach; ?>
             </div>
         
